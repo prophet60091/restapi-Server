@@ -1,0 +1,21 @@
+{
+  "name": "robapp",
+  "version": "1.0.0",
+  "description": "A M.E.A.N application.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "assert": "^1.4.1",
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "lodash": "^2.4.2",
+    "method-override": "^2.3.6",
+    "mongoose": "^4.6.3",
+    "node-restful": "^0.2.5",
+    "resourcejs": ""
+  }
+}
