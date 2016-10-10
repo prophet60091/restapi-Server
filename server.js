@@ -53,6 +53,8 @@ mongoose.connection.once('open', function() {
 
       // console.log('Listening on port 3000...');
       // app.listen(80);
-}).listen(process.env.PORT || 8080, function () {
-    console.log('started web process');
-});
+    app.listen(process.env.PORT || 8080, function () {
+        console.log('started web process');
+    });
+
+})
