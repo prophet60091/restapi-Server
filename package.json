@@ -5,7 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "start": "node server.js",
+    "deploy": "gcloud app deploy"
+  },
+  "engines": {
+    "node": "~4.2"
   },
   "author": "",
   "license": "ISC",
@@ -17,6 +21,8 @@
     "method-override": "^2.3.6",
     "mongoose": "^4.6.3",
     "node-restful": "^0.2.5",
-    "resourcejs": ""
+    "resourcejs": "",
+    "nconf": "^0.8.4",
+    "mongodb": "^2.1.5"
   }
 }
