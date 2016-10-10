@@ -29,4 +29,5 @@ var BeerSchema = new mongoose.Schema({
 });
 
 // Export the model.
-module.exports = BeerSchema;
+//module.exports = BeerSchema;
+module.exports = mongoose.model('beer', BeerSchema);

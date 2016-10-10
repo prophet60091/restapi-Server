@@ -1,8 +1,9 @@
 var restful = require('node-restful');
+//var Resource = require('resourcejs');
 module.exports = function(app, route) {
 
   // Setup the controller for REST;
-  //Resource(app, '', route, app.models.movie).rest(); // we didn't install resources its having issues
+  //Resource(app, '', route, app.models.beer).rest(); // we didn't install resources its having issues
 
   var rest = restful.model(
       'beer',
