@@ -35,8 +35,7 @@ app.use(function(req, res, next) {
 var options = { server: { socketOptions: { keepAlive: 300000, connectTimeoutMS: 30000 } },
     replset: { socketOptions: { keepAlive: 300000, connectTimeoutMS : 30000 } } };
 
-//mongoose.connect('mongodb://testing1234:doppelbok1@ds053206.mlab.com:53206/cs496beers');
-mongoose.connect('mongodb://testing1234:doppelbok1@ds053206.mlab.com:53206/cs496beers', options);
+
 
 // //set the mongoose promise to use native ES6
  mongoose.Promise = global.Promise;
