@@ -8,7 +8,7 @@ module.exports = function(app, route) {
   var rest = restful.model(
       'beer',
       app.models.beer
-  ).methods(['get', 'put', 'post', 'delete' ]);
+  ).methods(['get','put','post','delete' ]);
 
   //register the endpoint of the application - (i.e. defines it as a place where a rest api is available)
     rest.register(app, route);
