@@ -15,7 +15,7 @@ var BeerSchema = new mongoose.Schema({
     required: true
   },
   alcohol_content: {
-    type: String,
+    type: Number,
     required: false
   },
   origin: {
@@ -24,6 +24,10 @@ var BeerSchema = new mongoose.Schema({
   },
   location: {
     type:String ,
+    required: false
+  },
+  loved: {
+    type:Boolean,
     required: false
   }
 });
