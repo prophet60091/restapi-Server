@@ -11,13 +11,14 @@ var _ = require('lodash');
 var app = express();
 
 // Add Middleware necessary for REST API's
-// app.use(bodyParser.urlencoded({extended: true}));
-// app.use(bodyParser.json());
-// app.use(methodOverride('X-HTTP-Method-Override'));
-// //app.use(bodyParser.json({type:'application/vnd.api+json'}));
-app.use(bodyParser.urlencoded({'extended':'true'}));
+app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
+app.use(methodOverride('X-HTTP-Method-Override'));
 app.use(bodyParser.json({type:'application/vnd.api+json'}));
+// app.use(bodyParser.urlencoded({'extended':'true'}));
+// app.use(bodyParser.json());
+// app.use(bodyParser.text());
+// app.use(bodyParser.json({type:'application/json'}));
 app.use(methodOverride());
 
 

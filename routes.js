@@ -1,3 +1,3 @@
 module.exports = {
-    '/beer' :require('./controllers/BeerController.js')
+    'beer' :require('./controllers/BeerController')
 };
