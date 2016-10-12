@@ -26,6 +26,7 @@ app.use(methodOverride());
 // CORS Support
 app.use(function(req, res, next) {
       res.header('Access-Control-Allow-Origin', '*');
+      res.header('Access-Control-Allow-Origin', 'http://54.218.249.67');
       res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
       res.header('Access-Control-Allow-Headers', 'Content-Type');
       next();
@@ -35,7 +36,7 @@ app.use(function(req, res, next) {
 var options = { server: { socketOptions: { keepAlive: 300000, connectTimeoutMS: 30000 } },
     replset: { socketOptions: { keepAlive: 300000, connectTimeoutMS : 30000 } } };
 
-
+mongoose.connect('mongodb://tesingMyPatience:Ihaequ2u@ds053206.mlab.com:53206/cs496beers', options);
 
 // //set the mongoose promise to use native ES6
  mongoose.Promise = global.Promise;
@@ -59,7 +60,7 @@ mongoose.connection.once('open', function() {
 
       // console.log('Listening on port 3000...');
       // app.listen(80);
-    app.listen(8080, function () {
+    app.listen(9000, function () {
         console.log('started web process');
     });
 
