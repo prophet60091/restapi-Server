@@ -4,26 +4,32 @@ var mongoose = require('mongoose');
 var BeerSchema = new mongoose.Schema({
   name: {
     type: String,
+    maxlength: 60,
     required: true
   },
   brewery: {
     type: String,
+    maxlength: 60,
     required: false
   },
   style: {
     type: String,
+    maxlength: 60,
     required: true
   },
   alcohol_content: {
     type: Number,
+    max: 15,
     required: false
   },
   origin: {
     type:String ,
+    maxlength: 60,
     required: false
   },
   location: {
     type:String ,
+    maxlength: 60,
     required: false
   },
   loved: {
