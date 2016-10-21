@@ -25,6 +25,7 @@ var Resource = require('resourcejs');
 module.exports = function(app, route) {
 
   // Setup the controller for REST;
+    console.log(route, app);
   Resource(app, '', route,  app.models.style).rest();
 
   // Return middleware.
