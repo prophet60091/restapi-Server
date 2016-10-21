@@ -7,33 +7,43 @@ var BeerSchema = new mongoose.Schema({
     maxlength: 60,
     required: true
   },
-  brewery: {
+  description: {
     type: String,
-    maxlength: 60,
+    maxlength: 255,
+    required: true
+  },
+  brewery: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'locations',
     required: false
   },
   style: {
-    type: String,
-    maxlength: 60,
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'styles',
     required: true
   },
   alcohol_content: {
     type: Number,
-    max: 15,
+    max: 3,
+    required: false
+  },
+  ibu: {
+    type: Number,
+    max: 4,
     required: false
   },
   origin: {
-    type:String ,
-    maxlength: 60,
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'locations',
     required: false
   },
-  location: {
-    type:String ,
-    maxlength: 60,
+  image: {
+    type: String,
+    maxlength: 255,
     required: false
   },
-  loved: {
-    type:Boolean,
+  date: {
+    type: Date,
     required: false
   }
 });

@@ -23,6 +23,7 @@
     "mongoose": "^4.6.3",
     "nconf": "^0.8.4",
     "node-restful": "^0.2.5",
-    "resourcejs": "^0.1.25"
+    "resourcejs": "^0.1.25",
+    "mongoose-bcrypt": ""
   }
 }
