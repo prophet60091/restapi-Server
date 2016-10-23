@@ -66,6 +66,9 @@ mongoose.connection.once('open', function() {
     _.each(routes, function(controller, route) {
     app.use(route, controller(app, route));
     });
+    
+    //load language
+    var msg = require('./config/language.en');
 
       // console.log('Listening on port 3000...');
       // app.listen(80);
