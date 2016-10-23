@@ -1,4 +1,5 @@
 var mongoose = require('mongoose');
+var bcrypt = require('mongoose-bcrypt');
 
 // Create the Schema.
 var UserSchema = new mongoose.Schema({
@@ -42,6 +43,39 @@ var UserSchema = new mongoose.Schema({
     required: false
   }
 });
+
+
+//based on https://devdactic.com/restful-api-user-authentication-1/
+//salt the password before storing it
+UserSchema.pre('save', function (next) {
+    var user = this;
+    if (this.isModified('password') || this.isNew) {
+        bcrypt.genSalt(10, function (err, salt) {
+            if (err) {
+                return next(err);
+            }
+            bcrypt.hash(user.password, salt, function (err, hash) {
+                if (err) {
+                    return next(err);
+                }
+                user.password = hash;
+                next();
+            });
+        });
+    } else {
+        return next();
+    }
+});
+
+// check if it matches the password in the database
+UserSchema.methods.comparePassword = function (passw, callback) {
+    bcrypt.compare(passw, this.password, function (err, isMatch) {
+        if (err) {
+            return callback(err);
+        }
+        callback(null, isMatch);
+    });
+};
 
 // Export the model.
 //module.exports = BeerSchema;

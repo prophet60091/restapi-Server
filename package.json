@@ -22,8 +22,10 @@
     "mongodb": "^2.1.5",
     "mongoose": "^4.6.3",
     "nconf": "^0.8.4",
-    "node-restful": "^0.2.5",
     "resourcejs": "^0.1.25",
-    "mongoose-bcrypt": ""
+    "mongoose-bcrypt": "",
+    "morgan":"~1.5.0",
+    "passport": "^0.3.0",
+    "passport-jwt": "^1.2.1"
   }
 }

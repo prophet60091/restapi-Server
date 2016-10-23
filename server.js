@@ -6,6 +6,8 @@ var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
 var _ = require('lodash');
+var morgan = require('morgan');
+var config = require('./config/server');
 
 // Create the application.
 var app = express();
@@ -17,14 +19,6 @@ app.use(methodOverride('X-HTTP-Method-Override'));
 app.use(bodyParser.json({type:'application/vnd.api+json'}));
 app.use(methodOverride());
 
-app.all('*', function(req, res, next) {
-    res.header('Access-Control-Allow-Origin', req.get('Origin') || '*');
-    res.header('Access-Control-Allow-Credentials', 'true');
-    res.header('Access-Control-Allow-Methods', 'GET,HEAD,PUT,PATCH,POST,DELETE');
-    res.header('Access-Control-Expose-Headers', 'Content-Length');
-    res.header('Access-Control-Allow-Headers', 'Accept, Authorization, Content-Type, X-Requested-With, Range');
-    next();
-});
 
 // CORS Support
 app.use(function(req, res, next) {
@@ -40,14 +34,17 @@ app.use(function(req, res, next) {
     }
 });
 
+// log to console
+app.use(morgan('dev'));
+
 // Connect to MongoDB
 var options = { server: { socketOptions: { keepAlive: 300000, connectTimeoutMS: 30000 } },
     replset: { socketOptions: { keepAlive: 300000, connectTimeoutMS : 30000 } } };
 
-mongoose.connect('mongodb://tesingMyPatience:Ihaequ2u@ds053206.mlab.com:53206/cs496beers', options);
+mongoose.connect(config.database, options);
 
 // //set the mongoose promise to use native ES6
- mongoose.Promise = global.Promise;
+mongoose.Promise = global.Promise;
 
 
 mongoose.connection.once('open', function() {
@@ -68,7 +65,7 @@ mongoose.connection.once('open', function() {
 
       // console.log('Listening on port 3000...');
       // app.listen(80);
-    app.listen(80 ,function () {
+    app.listen(config.port ,function () {
         console.log('started web process');
     });
 
