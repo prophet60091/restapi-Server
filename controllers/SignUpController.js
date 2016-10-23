@@ -21,27 +21,45 @@
 //   };
 // };
 
-//var Resource = require('resourcejs');
-// pass passport for configuration
-var passport	= require('passport');
-require('../config/passport')(passport);
+//refernce https://www.npmjs.com/package/resourcejs
+//reference https://devdactic.com/restful-api-user-authentication-1/
+
+var Resource = require('resourcejs');
 
 module.exports = function(app, route) {
 
-    // // Setup the controller for REST;
-    // Resource(app, '', route,  app.models.user).rest();
+    // pass passport for configuration
+    var passport	= require('passport');
+    require('../config/passport')(passport);
+
+    var gandalf = false;
+    var newUser = {};
+
+    // Setup the controller for REST;
+
+    Resource(app, '', route,  app.models.user).post({
+
+        before: function(req, res, next) {
+            gandalf = false; //you shall not pass
+            if (!req.body.name || !req.body.password) {
+                res.json({success: false, msg: 'Please pass name and password.'});
+
+            } else {
+                gandalf = true;
+              //   newUser = new User({
+              //   name: req.body.name,
+              //   password: req.body.password
+              //   //additional user info could be added here
+              // });
+            }
+        }
+    });
 
     // Return middleware.
     return function(req, res, next) {
 
-        if (!req.body.name || !req.body.password) {
-            res.json({success: false, msg: 'Please pass name and password.'});
-        } else {
-            var newUser = new User({
-                name: req.body.name,
-                password: req.body.password
-            });
-            // save the user
+        // save the user
+        if(gandalf){
             newUser.save(function(err) {
                 if (err) {
                     return res.json({success: false, msg: 'Username already exists.'});
@@ -52,4 +70,24 @@ module.exports = function(app, route) {
 
         next();
     };
+
+
+    // return function(req, res, next) {
+    //     if (!req.body.name || !req.body.password) {
+    //         res.json({success: false, msg: 'Please pass name and password.'});
+    //     } else {
+    //         var newUser = new User({
+    //             name: req.body.name,
+    //             password: req.body.password
+    //         });
+    //         // save the user
+    //         newUser.save(function (err) {
+    //             if (err) {
+    //                 return res.json({success: false, msg: 'Username already exists.'});
+    //             }
+    //             res.json({success: true, msg: 'Successful created new user.'});
+    //         });
+    //     }
+    //     next();
+    // }
 };
