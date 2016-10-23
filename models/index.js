@@ -1,6 +1,6 @@
 module.exports = {
-    beer: require('./Beers.js'),
-    user: require('./Users.js'),
-    location: require('./Locations.js'),
-    style: require('./Styles.js')
+    beer: require('./Beer.js'),
+    user: require('./User.js'),
+    location: require('./Location.js'),
+    style: require('./Style.js')
 };

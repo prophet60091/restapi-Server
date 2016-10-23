@@ -34,7 +34,7 @@ var BeerSchema = new mongoose.Schema({
   },
   origin: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'locations',
+    ref: 'locations.address.city',
     required: false
   },
   image: {

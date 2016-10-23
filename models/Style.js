@@ -11,7 +11,12 @@ var StyleSchema = new mongoose.Schema({
     type: String,
     maxlength: 255,
     required: true
-  }
+  },
+  related_styles: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'beers',
+    required: false
+  }],
 
 });
 

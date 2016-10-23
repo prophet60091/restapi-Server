@@ -47,7 +47,7 @@ var LocationSchema = new mongoose.Schema({
   beer_in_stock: [{
     beer:{
       type: mongoose.Schema.Types.ObjectId,
-      ref: 'beer',
+      ref: 'beers',
       required: false
     },
     vessel: {
@@ -72,16 +72,6 @@ var LocationSchema = new mongoose.Schema({
     }
 
   }],
-  ulocations: [{
-    locations:{
-      type: mongoose.Schema.Types.ObjectId,
-      ref: 'location',
-      required: false
-    },
-    loved: {
-      type:Boolean,
-      required: false
-    }}],
   date: {
     type: Date,
     required: false

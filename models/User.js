@@ -20,7 +20,7 @@ var UserSchema = new mongoose.Schema({
   ubeer: [{
     beer:{
       type: mongoose.Schema.Types.ObjectId,
-      ref: 'beer',
+      ref: 'beers',
       required: false
     },
     loved: {
@@ -30,7 +30,7 @@ var UserSchema = new mongoose.Schema({
   ulocations: [{
     locations:{
       type: mongoose.Schema.Types.ObjectId,
-      ref: 'location',
+      ref: 'locations',
       required: false
     },
     loved: {
