@@ -28,45 +28,43 @@ var Resource = require('resourcejs');
 
 module.exports = function(app, route) {
 
-    // pass passport for configuration
-    var passport	= require('passport');
-    require('../config/passport')(passport);
+    // // pass passport for configuration
+    // var passport	= require('passport');
+    // require('../config/passport')(passport);
 
     var gandalf = false;
-    var newUser = {};
-
-    // Setup the controller for REST;
 
     Resource(app, '', route,  app.models.user).post({
 
         before: function(req, res, next) {
-            gandalf = false; //you shall not pass
-            if (!req.body.name || !req.body.password) {
-                res.json({success: false, msg: 'Please pass name and password.'});
-
-            } else {
-                gandalf = true;
-              //   newUser = new User({
-              //   name: req.body.name,
-              //   password: req.body.password
-              //   //additional user info could be added here
-              // });
+            var User = app.models.user;
+            gandalf = false; //you shall not post
+            if (!req.body.name || !req.body.password  || !req.body.email  ) {
+                res.json({success: false, msg: 'Please pass name and password. and Email'});
+            //validate the email
+            } else if (!validator.isEmail(req.body.email)){
+                res.json({success: false, msg: 'Invalid E-mail'});
             }
+
+            else {
+                gandalf = true;
+            }
+            next();
+        },
+        after:function(req,res,next){
+            if(gandalf){
+                // if (res.err) {
+                //     return res.json({success: false, msg: 'Username already exists.'});
+                // }
+                // res.json({success: true, msg: 'Successful created new user.'});
+                console.log(res);
+            }
+            next();
         }
     });
 
     // Return middleware.
     return function(req, res, next) {
-
-        // save the user
-        if(gandalf){
-            newUser.save(function(err) {
-                if (err) {
-                    return res.json({success: false, msg: 'Username already exists.'});
-                }
-                res.json({success: true, msg: 'Successful created new user.'});
-            });
-        }
 
         next();
     };

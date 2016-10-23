@@ -4,6 +4,7 @@
 var express = require('express');
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
+var passport = require('passport');
 var methodOverride = require('method-override');
 var _ = require('lodash');
 var morgan = require('morgan');
@@ -45,6 +46,9 @@ mongoose.connect(config.database, options);
 
 // //set the mongoose promise to use native ES6
 mongoose.Promise = global.Promise;
+
+// pass passport for configuration
+require('./config/passport')(passport);
 
 
 mongoose.connection.once('open', function() {

@@ -23,9 +23,10 @@
     "mongoose": "^4.6.3",
     "nconf": "^0.8.4",
     "resourcejs": "^0.1.25",
-    "mongoose-bcrypt": "",
+    "bcrypt": "",
     "morgan":"~1.5.0",
     "passport": "^0.3.0",
-    "passport-jwt": "^1.2.1"
+    "passport-jwt": "^1.2.1",
+    "validator": "~6.1.0"
   }
 }
