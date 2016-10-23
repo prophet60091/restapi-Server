@@ -1,5 +1,5 @@
 module.exports= {
-    'secret': 'devdacticIsAwesome',
+    'secret': 'WashUfuziAnDriveMeToFrienze',
     'database': 'mongodb://userMcUserName:YOUENJOYMYSELF@ds021166.mlab.com:21166/debeers496',
     "port": "8080"
 }
