@@ -5,5 +5,5 @@ module.exports = {
     'style': require('./controllers/StyleController.js'),
     'signup': require('./controllers/SignUpController.js'),
     'user-beer': require('./controllers/UserBeerController.js'),
-    'beer-style': require('./controllers/UserBeerController.js')
+    'beer-style': require('./controllers/BeerStyleController.js')
 };
