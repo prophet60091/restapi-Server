@@ -12,7 +12,7 @@ var BeerSchema = new mongoose.Schema({
     maxlength: 255,
     required: true
   },
-  brewery: {
+  location: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'locations',
     required: false
@@ -20,21 +20,16 @@ var BeerSchema = new mongoose.Schema({
   style: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'styles',
-    required: true
+    required: false
   },
   alcohol_content: {
     type: Number,
-    max: 3,
+    max: 20,
     required: false
   },
   ibu: {
     type: Number,
-    max: 4,
-    required: false
-  },
-  origin: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'locations.address.city',
+    max: 9999,
     required: false
   },
   image: {
@@ -50,4 +45,4 @@ var BeerSchema = new mongoose.Schema({
 
 // Export the model.
 //module.exports = BeerSchema;
-module.exports = mongoose.model('beer', BeerSchema);
+module.exports = mongoose.model('beers', BeerSchema);

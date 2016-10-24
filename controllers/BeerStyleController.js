@@ -25,7 +25,16 @@ var Resource = require('resourcejs');
 module.exports = function(app, route) {
 
   // Setup the controller for REST;
- Resource(app, '', route,  app.models.beer).rest();
+ Resource(app, '/beer/:beerId', route,  app.models.beer).rest({
+
+     // Add a before handler to include filter and parent information.
+     before: function(req, res, next) {
+         req.body.beer = req.params.beerId;
+         req.modelQuery = this.model.where('beer', req.params.parentId);
+         next();
+     }
+
+ });
 
   // Return middleware.
   return function(req, res, next) {

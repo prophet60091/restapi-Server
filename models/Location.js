@@ -80,4 +80,4 @@ var LocationSchema = new mongoose.Schema({
 
 // Export the model.
 //module.exports = BeerSchema;
-module.exports = mongoose.model('location', LocationSchema);
+module.exports = mongoose.model('locations', LocationSchema);

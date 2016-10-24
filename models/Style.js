@@ -22,4 +22,4 @@ var StyleSchema = new mongoose.Schema({
 
 // Export the model.
 //module.exports = BeerSchema;
-module.exports = mongoose.model('style', StyleSchema);
+module.exports = mongoose.model('styles', StyleSchema);
