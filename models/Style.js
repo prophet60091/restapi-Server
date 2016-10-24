@@ -16,7 +16,7 @@ var StyleSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: 'beers',
     required: false
-  }],
+  }]
 
 });
 
