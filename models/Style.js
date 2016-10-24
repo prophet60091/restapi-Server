@@ -21,7 +21,10 @@ var StyleSchema = new mongoose.Schema({
 });
 
 StyleSchema.pre('remove', function (next) {
-  app.models.beers.update({style: ""});
+
+  BeerSchema.remove({style: this._id}).exec();
+  console.log(result);
+  next();
 });
 
 // Export the model.

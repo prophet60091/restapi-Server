@@ -1,0 +1,2194 @@
+{
+	"id": "9a2678b9-5a28-f8cf-c27f-2e5996cd057a",
+	"name": "assignment4",
+	"allTests": [],
+	"timestamp": 1477290470228,
+	"collection_id": "ab5630fb-73d7-2bc1-9df7-a17e0c7116f0",
+	"folder_id": 0,
+	"target_type": "collection",
+	"environment_id": "5632c5a1-8f01-99d4-6d37-1d8c0326e35a",
+	"data": [],
+	"delay": 0,
+	"count": 1,
+	"collection": {
+		"id": "ab5630fb-73d7-2bc1-9df7-a17e0c7116f0",
+		"name": "assignment4",
+		"description": "",
+		"order": [
+			"5a7896f4-7d12-0cd9-0a3b-5300b9624d36",
+			"54f27ccb-3186-f326-ebb9-9bb9861d2d84",
+			"8cfd232b-ff05-41eb-f434-2d08ea6c13b5",
+			"598c1b91-5c2c-548a-583a-acf9a82034a0",
+			"ea8fcf02-0c81-a80c-dfa6-26fd4ad18952",
+			"d941b17d-da55-3a65-23c8-b0f4a54359fc",
+			"35499bb4-8ab6-3b86-88ad-a0fb78b44f83",
+			"5aac7fee-bacf-16a5-abaf-047117b3ff96",
+			"87b63632-2c1c-c216-a71e-27d07be6f1b5",
+			"2c72850b-b1d9-9697-7e34-f515b7b56bd1",
+			"3d8d4a6c-21e5-9e15-a329-d22cb371dde5",
+			"cd52ec4d-595a-9d2a-2c0b-310e50591b51",
+			"2b85a506-8ee7-ceee-6954-7378079b6591",
+			"a50053de-3288-5d0a-9541-3e28556910fb",
+			"f9306843-6bc5-6b07-11bf-d4a93b73be0d"
+		],
+		"folders": [],
+		"requests": [
+			{
+				"id": "2b85a506-8ee7-ceee-6954-7378079b6591",
+				"headers": "Content-Type: application/x-www-form-urlencoded\n",
+				"url": "localhost:8080/style/{{newStyle}}",
+				"preRequestScript": null,
+				"pathVariables": {},
+				"method": "DELETE",
+				"data": [
+					{
+						"key": "ibu",
+						"value": "2100",
+						"type": "text",
+						"enabled": true
+					},
+					{
+						"key": "brewery",
+						"value": "580bafdef36d2847090b8a30",
+						"type": "text",
+						"enabled": true
+					},
+					{
+						"key": "name",
+						"value": "test Beer 2",
+						"type": "text",
+						"enabled": true
+					},
+					{
+						"key": "style",
+						"value": "580bf28fdcba0f490c72e3d6",
+						"type": "text",
+						"enabled": true
+					},
+					{
+						"key": "alcohol_content",
+						"value": "8.9",
+						"type": "text",
+						"enabled": true
+					},
+					{
+						"key": "date",
+						"value": "10/23/2016",
+						"type": "text",
+						"enabled": true
+					},
+					{
+						"key": "description",
+						"value": "this is a test beer 2",
+						"type": "text",
+						"enabled": true
+					}
+				],
+				"dataMode": "urlencoded",
+				"version": 2,
+				"tests": "tests[\"Status code is 204\"] = responseCode.code === 204;\n\n",
+				"currentHelper": "normal",
+				"helperAttributes": {},
+				"time": 1477290414225,
+				"name": "delete a style",
+				"description": "",
+				"collectionId": "ab5630fb-73d7-2bc1-9df7-a17e0c7116f0",
+				"responses": []
+			},
+			{
+				"id": "2c72850b-b1d9-9697-7e34-f515b7b56bd1",
+				"headers": "Content-Type: application/x-www-form-urlencoded\n",
+				"url": "localhost:8080/style/{{newStyle}}",
+				"preRequestScript": null,
+				"pathVariables": {},
+				"method": "PUT",
+				"data": [
+					{
+						"key": "name",
+						"value": "IPA",
+						"type": "text",
+						"enabled": true
+					},
+					{
+						"key": "description",
+						"value": "this is a test description of ....",
+						"type": "text",
+						"enabled": true
+					}
+				],
+				"dataMode": "urlencoded",
+				"version": 2,
+				"tests": "\n\nvar jsonData = JSON.parse(responseBody);\ntests[\"Updated Value is IPA\"] = jsonData.name === \"IPA\";\n\ntests[\"Status code is 200\"] = responseCode.code === 200;",
+				"currentHelper": "normal",
+				"helperAttributes": {},
+				"time": 1477288824224,
+				"name": "update style ",
+				"description": "",
+				"collectionId": "ab5630fb-73d7-2bc1-9df7-a17e0c7116f0",
+				"responses": []
+			},
+			{
+				"id": "35499bb4-8ab6-3b86-88ad-a0fb78b44f83",
+				"headers": "Content-Type: application/x-www-form-urlencoded\n",
+				"url": "localhost:8080/style",
+				"pathVariables": {},
+				"preRequestScript": null,
+				"method": "GET",
+				"collectionId": "ab5630fb-73d7-2bc1-9df7-a17e0c7116f0",
+				"data": [
+					{
+						"key": "ibu",
+						"value": "2100",
+						"type": "text",
+						"enabled": true
+					},
+					{
+						"key": "brewery",
+						"value": "580bafdef36d2847090b8a30",
+						"type": "text",
+						"enabled": true
+					},
+					{
+						"key": "name",
+						"value": "test Beer 2",
+						"type": "text",
+						"enabled": true
+					},
+					{
+						"key": "style",
+						"value": "580bf28fdcba0f490c72e3d6",
+						"type": "text",
+						"enabled": true
+					},
+					{
+						"key": "alcohol_content",
+						"value": "8.9",
+						"type": "text",
+						"enabled": true
+					},
+					{
+						"key": "date",
+						"value": "10/23/2016",
+						"type": "text",
+						"enabled": true
+					},
+					{
+						"key": "description",
+						"value": "this is a test beer 2",
+						"type": "text",
+						"enabled": true
+					}
+				],
+				"dataMode": "urlencoded",
+				"name": "get all styles",
+				"description": "get all styles",
+				"descriptionFormat": "html",
+				"time": 1477283901105,
+				"version": 2,
+				"responses": [],
+				"tests": null,
+				"currentHelper": "normal",
+				"helperAttributes": {}
+			},
+			{
+				"id": "3d8d4a6c-21e5-9e15-a329-d22cb371dde5",
+				"headers": "Content-Type: application/x-www-form-urlencoded\n",
+				"url": "localhost:8080/style/{{newStyle}}",
+				"pathVariables": {},
+				"preRequestScript": null,
+				"method": "GET",
+				"collectionId": "ab5630fb-73d7-2bc1-9df7-a17e0c7116f0",
+				"data": [
+					{
+						"key": "ibu",
+						"value": "2100",
+						"type": "text",
+						"enabled": true
+					},
+					{
+						"key": "brewery",
+						"value": "580bafdef36d2847090b8a30",
+						"type": "text",
+						"enabled": true
+					},
+					{
+						"key": "name",
+						"value": "test Beer 2",
+						"type": "text",
+						"enabled": true
+					},
+					{
+						"key": "style",
+						"value": "580bf28fdcba0f490c72e3d6",
+						"type": "text",
+						"enabled": true
+					},
+					{
+						"key": "alcohol_content",
+						"value": "8.9",
+						"type": "text",
+						"enabled": true
+					},
+					{
+						"key": "date",
+						"value": "10/23/2016",
+						"type": "text",
+						"enabled": true
+					},
+					{
+						"key": "description",
+						"value": "this is a test beer 2",
+						"type": "text",
+						"enabled": true
+					}
+				],
+				"dataMode": "urlencoded",
+				"name": "view a style after update",
+				"description": "",
+				"descriptionFormat": "html",
+				"time": 1477289934124,
+				"version": 2,
+				"responses": [],
+				"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\n\n\nvar jsonData = JSON.parse(responseBody);\ntests[\"newStlye\"] = jsonData.name === \"added style\";",
+				"currentHelper": "normal",
+				"helperAttributes": {}
+			},
+			{
+				"id": "54f27ccb-3186-f326-ebb9-9bb9861d2d84",
+				"headers": "Content-Type: application/x-www-form-urlencoded\n",
+				"url": "localhost:8080/beer/",
+				"preRequestScript": null,
+				"pathVariables": {},
+				"method": "POST",
+				"data": [
+					{
+						"key": "ibu",
+						"value": "2100",
+						"type": "text",
+						"enabled": true
+					},
+					{
+						"key": "location",
+						"value": "580bafdef36d2847090b8a30",
+						"type": "text",
+						"enabled": true
+					},
+					{
+						"key": "name",
+						"value": "test Beer 2",
+						"type": "text",
+						"enabled": true
+					},
+					{
+						"key": "style",
+						"value": "580bf28fdcba0f490c72e3d6",
+						"type": "text",
+						"enabled": true
+					},
+					{
+						"key": "alcohol_content",
+						"value": "8.9",
+						"type": "text",
+						"enabled": true
+					},
+					{
+						"key": "date",
+						"value": "10/23/2016",
+						"type": "text",
+						"enabled": true
+					},
+					{
+						"key": "description",
+						"value": "this is a test beer 2",
+						"type": "text",
+						"enabled": true
+					}
+				],
+				"dataMode": "urlencoded",
+				"version": 2,
+				"tests": "tests[\"Successful POST request\"] = responseCode.code === 201 || responseCode.code === 202;\n\nvar jsonData = JSON.parse(responseBody);\ntests[\"ibu\"] = jsonData.ibu === 2100;\ntests[\"location\"] = jsonData.location === \"580bafdef36d2847090b8a30\";\ntests[\"name\"] = jsonData.name === \"test Beer 2\";\ntests[\"style\"] = jsonData.style === \"580bf28fdcba0f490c72e3d6\";\ntests[\"alcohol_content\"] = jsonData.alcohol_content === 8.9;\n\n\npostman.setGlobalVariable(\"newBeer\", jsonData._id);\n",
+				"currentHelper": "normal",
+				"helperAttributes": {},
+				"time": 1477288870944,
+				"name": "Add test Beer 2",
+				"description": "Add test Beer 2",
+				"collectionId": "ab5630fb-73d7-2bc1-9df7-a17e0c7116f0",
+				"responses": []
+			},
+			{
+				"id": "598c1b91-5c2c-548a-583a-acf9a82034a0",
+				"headers": "Content-Type: application/x-www-form-urlencoded\n",
+				"url": "localhost:8080/beer/{{newBeer}}",
+				"preRequestScript": null,
+				"pathVariables": {},
+				"method": "GET",
+				"data": [
+					{
+						"key": "ibu",
+						"value": "2100",
+						"type": "text",
+						"enabled": true
+					},
+					{
+						"key": "brewery",
+						"value": "580bafdef36d2847090b8a30",
+						"type": "text",
+						"enabled": true
+					},
+					{
+						"key": "name",
+						"value": "test Beer 2",
+						"type": "text",
+						"enabled": true
+					},
+					{
+						"key": "style",
+						"value": "580bf28fdcba0f490c72e3d6",
+						"type": "text",
+						"enabled": true
+					},
+					{
+						"key": "alcohol_content",
+						"value": "8.9",
+						"type": "text",
+						"enabled": true
+					},
+					{
+						"key": "date",
+						"value": "10/23/2016",
+						"type": "text",
+						"enabled": true
+					},
+					{
+						"key": "description",
+						"value": "this is a test beer 2",
+						"type": "text",
+						"enabled": true
+					}
+				],
+				"dataMode": "urlencoded",
+				"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\n",
+				"currentHelper": "normal",
+				"helperAttributes": {},
+				"time": 1477289033054,
+				"name": "look up beer",
+				"description": "lookup a beer",
+				"collectionId": "ab5630fb-73d7-2bc1-9df7-a17e0c7116f0",
+				"responses": [
+					{
+						"status": "",
+						"responseCode": {
+							"code": 200,
+							"name": "OK",
+							"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+						},
+						"time": 69,
+						"headers": [
+							{
+								"name": "Access-Control-Allow-Credentials",
+								"key": "Access-Control-Allow-Credentials",
+								"value": "true",
+								"description": "Indicates whether or not the response to the request can be exposed when the credentials flag is true. When used as part of a response to a preflight request, this indicates whether or not the actual request can be made using credentials."
+							},
+							{
+								"name": "Access-Control-Allow-Headers",
+								"key": "Access-Control-Allow-Headers",
+								"value": "Accept, Authorization, Content-Type, X-Requested-With, Range",
+								"description": "Used in response to a preflight request to indicate which HTTP headers can be used when making the actual request."
+							},
+							{
+								"name": "Access-Control-Allow-Methods",
+								"key": "Access-Control-Allow-Methods",
+								"value": "GET,HEAD,PUT,PATCH,POST,DELETE",
+								"description": "Specifies the method or methods allowed when accessing the resource. This is used in response to a preflight request."
+							},
+							{
+								"name": "Access-Control-Allow-Origin",
+								"key": "Access-Control-Allow-Origin",
+								"value": "*",
+								"description": "Specifies a URI that may access the resource. For requests without credentials, the server may specify '*' as a wildcard, thereby allowing any origin to access the resource."
+							},
+							{
+								"name": "Access-Control-Expose-Headers",
+								"key": "Access-Control-Expose-Headers",
+								"value": "Content-Length",
+								"description": "Lets a server whitelist headers that browsers are allowed to access."
+							},
+							{
+								"name": "Cache-control",
+								"key": "Cache-control",
+								"value": "public, max-age=45000",
+								"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
+							},
+							{
+								"name": "Connection",
+								"key": "Connection",
+								"value": "keep-alive",
+								"description": "Options that are desired for the connection"
+							},
+							{
+								"name": "Content-Length",
+								"key": "Content-Length",
+								"value": "237",
+								"description": "The length of the response body in octets (8-bit bytes)"
+							},
+							{
+								"name": "Content-Type",
+								"key": "Content-Type",
+								"value": "application/json; charset=utf-8",
+								"description": "The mime type of this content"
+							},
+							{
+								"name": "Date",
+								"key": "Date",
+								"value": "Mon, 24 Oct 2016 04:14:50 GMT",
+								"description": "The date and time that the message was sent"
+							},
+							{
+								"name": "ETag",
+								"key": "ETag",
+								"value": "W/\"ed-OA90M7ODcLwgSi48fRTlHA\"",
+								"description": "An identifier for a specific version of a resource, often a message digest"
+							},
+							{
+								"name": "X-Powered-By",
+								"key": "X-Powered-By",
+								"value": "Express",
+								"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+							}
+						],
+						"cookies": [],
+						"mime": "",
+						"text": "{\"_id\":\"580d63dbbe921524acee9b48\",\"ibu\":2100,\"name\":\"test Beer\",\"style\":\"580bf28fdcba0f490c72e3d6\",\"alcohol_content\":8.9,\"date\":\"2016-10-23T06:00:00.000Z\",\"description\":\"this is a test beer\",\"__v\":0,\"location\":\"580bc15adcba0f490c72d64b\"}",
+						"language": "javascript",
+						"rawDataType": "text",
+						"previewType": "html",
+						"searchResultScrolledTo": -1,
+						"forceNoPretty": false,
+						"write": true,
+						"empty": false,
+						"failed": false,
+						"state": {
+							"size": "normal"
+						},
+						"id": "f46d5915-6ebc-527e-3653-82bdb7d6d0b8",
+						"name": "beer view",
+						"request": {
+							"url": "localhost:8080/beer/580d63dbbe921524acee9b48",
+							"headers": [
+								{
+									"key": "Content-Type",
+									"value": "application/x-www-form-urlencoded",
+									"enabled": true,
+									"description": "The mime type of this content"
+								}
+							],
+							"data": [
+								{
+									"key": "ibu",
+									"value": "2100",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "brewery",
+									"value": "580bafdef36d2847090b8a30",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "name",
+									"value": "test Beer 2",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "style",
+									"value": "580bf28fdcba0f490c72e3d6",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "alcohol_content",
+									"value": "8.9",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "date",
+									"value": "10/23/2016",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "description",
+									"value": "this is a test beer 2",
+									"type": "text",
+									"enabled": true
+								}
+							],
+							"method": "GET",
+							"dataMode": "urlencoded"
+						}
+					}
+				]
+			},
+			{
+				"id": "5a7896f4-7d12-0cd9-0a3b-5300b9624d36",
+				"headers": "Content-Type: application/x-www-form-urlencoded\n",
+				"url": "localhost:8080/beer/",
+				"pathVariables": {},
+				"preRequestScript": null,
+				"method": "GET",
+				"collectionId": "ab5630fb-73d7-2bc1-9df7-a17e0c7116f0",
+				"data": [
+					{
+						"key": "ibu",
+						"value": "2100",
+						"type": "text",
+						"enabled": true
+					},
+					{
+						"key": "brewery",
+						"value": "580bafdef36d2847090b8a30",
+						"type": "text",
+						"enabled": true
+					},
+					{
+						"key": "name",
+						"value": "test Beer 2",
+						"type": "text",
+						"enabled": true
+					},
+					{
+						"key": "style",
+						"value": "580bf28fdcba0f490c72e3d6",
+						"type": "text",
+						"enabled": true
+					},
+					{
+						"key": "alcohol_content",
+						"value": "8.9",
+						"type": "text",
+						"enabled": true
+					},
+					{
+						"key": "date",
+						"value": "10/23/2016",
+						"type": "text",
+						"enabled": true
+					},
+					{
+						"key": "description",
+						"value": "this is a test beer 2",
+						"type": "text",
+						"enabled": true
+					}
+				],
+				"dataMode": "urlencoded",
+				"name": "get all beers",
+				"description": "get all beers",
+				"descriptionFormat": "html",
+				"time": 1477282657648,
+				"version": 2,
+				"responses": [],
+				"tests": null,
+				"currentHelper": "normal",
+				"helperAttributes": {}
+			},
+			{
+				"id": "5aac7fee-bacf-16a5-abaf-047117b3ff96",
+				"headers": "Content-Type: application/x-www-form-urlencoded\n",
+				"url": "localhost:8080/style",
+				"preRequestScript": null,
+				"pathVariables": {},
+				"method": "POST",
+				"data": [
+					{
+						"key": "name",
+						"value": "added style",
+						"type": "text",
+						"enabled": true
+					},
+					{
+						"key": "description",
+						"value": "the description",
+						"type": "text",
+						"enabled": true
+					},
+					{
+						"key": "related_styles",
+						"value": "580bf28fdcba0f490c72e3d6",
+						"type": "text",
+						"enabled": true
+					}
+				],
+				"dataMode": "urlencoded",
+				"version": 2,
+				"tests": "tests[\"Status code is 200\"] = responseCode.code === 201;\nvar jsonData = JSON.parse(responseBody);\n\n//get the new id from the data generated\npostman.setEnvironmentVariable(\"newStyle\", jsonData._id);\n\n\npostman.setGlobalVariable(\"newStyle\", jsonData._id);",
+				"currentHelper": "normal",
+				"helperAttributes": {},
+				"time": 1477288420120,
+				"name": "add style",
+				"description": "",
+				"collectionId": "ab5630fb-73d7-2bc1-9df7-a17e0c7116f0",
+				"responses": []
+			},
+			{
+				"id": "87b63632-2c1c-c216-a71e-27d07be6f1b5",
+				"headers": "Content-Type: application/x-www-form-urlencoded\n",
+				"url": "localhost:8080/style/{{newStyle}}",
+				"preRequestScript": null,
+				"pathVariables": {},
+				"method": "GET",
+				"data": [
+					{
+						"key": "ibu",
+						"value": "2100",
+						"type": "text",
+						"enabled": true
+					},
+					{
+						"key": "brewery",
+						"value": "580bafdef36d2847090b8a30",
+						"type": "text",
+						"enabled": true
+					},
+					{
+						"key": "name",
+						"value": "test Beer 2",
+						"type": "text",
+						"enabled": true
+					},
+					{
+						"key": "style",
+						"value": "580bf28fdcba0f490c72e3d6",
+						"type": "text",
+						"enabled": true
+					},
+					{
+						"key": "alcohol_content",
+						"value": "8.9",
+						"type": "text",
+						"enabled": true
+					},
+					{
+						"key": "date",
+						"value": "10/23/2016",
+						"type": "text",
+						"enabled": true
+					},
+					{
+						"key": "description",
+						"value": "this is a test beer 2",
+						"type": "text",
+						"enabled": true
+					}
+				],
+				"dataMode": "urlencoded",
+				"version": 2,
+				"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\n\n\nvar jsonData = JSON.parse(responseBody);\ntests[\"newStlye\"] = jsonData.name === \"added style\";",
+				"currentHelper": "normal",
+				"helperAttributes": {},
+				"time": 1477289134548,
+				"name": "view a style",
+				"description": "",
+				"collectionId": "ab5630fb-73d7-2bc1-9df7-a17e0c7116f0",
+				"responses": []
+			},
+			{
+				"id": "8cfd232b-ff05-41eb-f434-2d08ea6c13b5",
+				"headers": "Content-Type: application/x-www-form-urlencoded\n",
+				"url": "localhost:8080/beer/",
+				"preRequestScript": null,
+				"pathVariables": {},
+				"method": "POST",
+				"data": [
+					{
+						"key": "ibu",
+						"value": "2100",
+						"type": "text",
+						"enabled": true
+					},
+					{
+						"key": "location",
+						"value": "doodle",
+						"type": "text",
+						"enabled": true
+					},
+					{
+						"key": "name",
+						"value": "test Beer 2",
+						"type": "text",
+						"enabled": true
+					},
+					{
+						"key": "style",
+						"value": "580bf28fdcba0f490c72e3d6",
+						"type": "text",
+						"enabled": true
+					},
+					{
+						"key": "alcohol_content",
+						"value": "8.9",
+						"type": "text",
+						"enabled": true
+					},
+					{
+						"key": "date",
+						"value": "10/23/2016",
+						"type": "text",
+						"enabled": true
+					},
+					{
+						"key": "description",
+						"value": "this is a test beer 2",
+						"type": "text",
+						"enabled": true
+					}
+				],
+				"dataMode": "urlencoded",
+				"version": 2,
+				"tests": "tests[\"Bad POST request\"] = responseCode.code !== 201 || responseCode.code !== 202;\n\n// var jsonData = JSON.parse(responseBody);\n// tests[\"ibu\"] = jsonData.ibu === 2100;\n// tests[\"brewery\"] = jsonData.brewery === \"580bafdef36d2847090b8a30\";\n// tests[\"name\"] = jsonData.name === \"test Beer 2\";\n// tests[\"style\"] =jsonData.style === \"580bf28fdcba0f490c72e3d6\"\n// tests[\"alcohol_content\" = jsonData.alohol_content === 8.9;\n\n",
+				"currentHelper": "normal",
+				"helperAttributes": {},
+				"time": 1477282331977,
+				"name": "test adding bad reference to a style",
+				"description": "BAD test Beer 2",
+				"collectionId": "ab5630fb-73d7-2bc1-9df7-a17e0c7116f0",
+				"responses": []
+			},
+			{
+				"id": "a50053de-3288-5d0a-9541-3e28556910fb",
+				"headers": "Content-Type: application/x-www-form-urlencoded\n",
+				"url": "localhost:8080/beer/{{newBeer}}",
+				"preRequestScript": null,
+				"pathVariables": {},
+				"method": "GET",
+				"data": [
+					{
+						"key": "ibu",
+						"value": "2100",
+						"type": "text",
+						"enabled": true
+					},
+					{
+						"key": "brewery",
+						"value": "580bafdef36d2847090b8a30",
+						"type": "text",
+						"enabled": true
+					},
+					{
+						"key": "name",
+						"value": "test Beer 2",
+						"type": "text",
+						"enabled": true
+					},
+					{
+						"key": "style",
+						"value": "580bf28fdcba0f490c72e3d6",
+						"type": "text",
+						"enabled": true
+					},
+					{
+						"key": "alcohol_content",
+						"value": "8.9",
+						"type": "text",
+						"enabled": true
+					},
+					{
+						"key": "date",
+						"value": "10/23/2016",
+						"type": "text",
+						"enabled": true
+					},
+					{
+						"key": "description",
+						"value": "this is a test beer 2",
+						"type": "text",
+						"enabled": true
+					}
+				],
+				"dataMode": "urlencoded",
+				"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\n\n\nvar jsonData = JSON.parse(responseBody);\ntests[\"removes style\"] = jsonData.style === '';",
+				"currentHelper": "normal",
+				"helperAttributes": {},
+				"time": 1477290082384,
+				"name": "look up beer after style removed",
+				"description": "lookup a beer",
+				"collectionId": "ab5630fb-73d7-2bc1-9df7-a17e0c7116f0",
+				"responses": []
+			},
+			{
+				"id": "cd52ec4d-595a-9d2a-2c0b-310e50591b51",
+				"headers": "Content-Type: application/x-www-form-urlencoded\n",
+				"url": "localhost:8080/beer/{{newBeer}}",
+				"preRequestScript": null,
+				"pathVariables": {},
+				"method": "PUT",
+				"data": [
+					{
+						"key": "ibu",
+						"value": "2100",
+						"type": "text",
+						"enabled": true
+					},
+					{
+						"key": "location",
+						"value": "580bafdef36d2847090b8a30",
+						"type": "text",
+						"enabled": true
+					},
+					{
+						"key": "name",
+						"value": "test Beer 2",
+						"type": "text",
+						"enabled": true
+					},
+					{
+						"key": "style",
+						"value": "{{newStyle}}",
+						"type": "text",
+						"enabled": true
+					},
+					{
+						"key": "alcohol_content",
+						"value": "3.2",
+						"type": "text",
+						"enabled": true
+					},
+					{
+						"key": "date",
+						"value": "10/23/2016",
+						"type": "text",
+						"enabled": true
+					},
+					{
+						"key": "description",
+						"value": "UPDATED BEER",
+						"type": "text",
+						"enabled": true
+					}
+				],
+				"dataMode": "urlencoded",
+				"version": 2,
+				"tests": "\nvar jsonData = JSON.parse(responseBody);\ntests[\"ibu\"] = jsonData.ibu === 2100;\ntests[\"description\"] = jsonData.description === \"UPDATED BEER\";\ntests[\"name\"] = jsonData.name === \"test Beer 2\";\ntests[\"alcohol_content\"] = jsonData.alcohol_content === 3.2;\n\ntests[\"Status code is 200\"] = responseCode.code === 200;",
+				"currentHelper": "normal",
+				"helperAttributes": {},
+				"time": 1477290180307,
+				"name": "updating a beer with new Style",
+				"description": "",
+				"collectionId": "ab5630fb-73d7-2bc1-9df7-a17e0c7116f0",
+				"responses": []
+			},
+			{
+				"id": "d941b17d-da55-3a65-23c8-b0f4a54359fc",
+				"headers": "Content-Type: application/x-www-form-urlencoded\n",
+				"url": "localhost:8080/beer/{{newBeer}}",
+				"pathVariables": {},
+				"preRequestScript": null,
+				"method": "GET",
+				"collectionId": "ab5630fb-73d7-2bc1-9df7-a17e0c7116f0",
+				"data": [
+					{
+						"key": "ibu",
+						"value": "2100",
+						"type": "text",
+						"enabled": true
+					},
+					{
+						"key": "brewery",
+						"value": "580bafdef36d2847090b8a30",
+						"type": "text",
+						"enabled": true
+					},
+					{
+						"key": "name",
+						"value": "test Beer 2",
+						"type": "text",
+						"enabled": true
+					},
+					{
+						"key": "style",
+						"value": "580bf28fdcba0f490c72e3d6",
+						"type": "text",
+						"enabled": true
+					},
+					{
+						"key": "alcohol_content",
+						"value": "8.9",
+						"type": "text",
+						"enabled": true
+					},
+					{
+						"key": "date",
+						"value": "10/23/2016",
+						"type": "text",
+						"enabled": true
+					},
+					{
+						"key": "description",
+						"value": "this is a test beer 2",
+						"type": "text",
+						"enabled": true
+					}
+				],
+				"dataMode": "urlencoded",
+				"name": "look up beer after update",
+				"description": "lookup a beer",
+				"descriptionFormat": "html",
+				"time": 1477289964077,
+				"version": 2,
+				"responses": [],
+				"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\n",
+				"currentHelper": "normal",
+				"helperAttributes": {}
+			},
+			{
+				"id": "ea8fcf02-0c81-a80c-dfa6-26fd4ad18952",
+				"headers": "Content-Type: application/x-www-form-urlencoded\n",
+				"url": "localhost:8080/beer/{{newBeer}}",
+				"preRequestScript": null,
+				"pathVariables": {},
+				"method": "PUT",
+				"data": [
+					{
+						"key": "ibu",
+						"value": "2100",
+						"type": "text",
+						"enabled": true
+					},
+					{
+						"key": "location",
+						"value": "580bafdef36d2847090b8a30",
+						"type": "text",
+						"enabled": true
+					},
+					{
+						"key": "name",
+						"value": "test Beer 2",
+						"type": "text",
+						"enabled": true
+					},
+					{
+						"key": "style",
+						"value": "580bf28fdcba0f490c72e3d6",
+						"type": "text",
+						"enabled": true
+					},
+					{
+						"key": "alcohol_content",
+						"value": "3.2",
+						"type": "text",
+						"enabled": true
+					},
+					{
+						"key": "date",
+						"value": "10/23/2016",
+						"type": "text",
+						"enabled": true
+					},
+					{
+						"key": "description",
+						"value": "this is an updated put",
+						"type": "text",
+						"enabled": true
+					}
+				],
+				"dataMode": "urlencoded",
+				"version": 2,
+				"tests": "\nvar jsonData = JSON.parse(responseBody);\ntests[\"ibu\"] = jsonData.ibu === 2100;\ntests[\"description\"] = jsonData.description === \"this is an updated put\";\ntests[\"name\"] = jsonData.name === \"test Beer 2\";\ntests[\"style\"] = jsonData.style === \"580bf28fdcba0f490c72e3d6\";\ntests[\"alcohol_content\"] = jsonData.alcohol_content === 3.2;\n\n\n\ntests[\"Status code is 200\"] = responseCode.code === 200;",
+				"currentHelper": "normal",
+				"helperAttributes": {},
+				"time": 1477289040554,
+				"name": "updating a beer",
+				"description": "",
+				"collectionId": "ab5630fb-73d7-2bc1-9df7-a17e0c7116f0",
+				"responses": []
+			},
+			{
+				"id": "f9306843-6bc5-6b07-11bf-d4a93b73be0d",
+				"headers": "Content-Type: application/x-www-form-urlencoded\n",
+				"url": "localhost:8080/beer/{{newBeer}}",
+				"preRequestScript": null,
+				"pathVariables": {},
+				"method": "DELETE",
+				"data": [
+					{
+						"key": "ibu",
+						"value": "2100",
+						"type": "text",
+						"enabled": true
+					},
+					{
+						"key": "brewery",
+						"value": "580bafdef36d2847090b8a30",
+						"type": "text",
+						"enabled": true
+					},
+					{
+						"key": "name",
+						"value": "test Beer 2",
+						"type": "text",
+						"enabled": true
+					},
+					{
+						"key": "style",
+						"value": "580bf28fdcba0f490c72e3d6",
+						"type": "text",
+						"enabled": true
+					},
+					{
+						"key": "alcohol_content",
+						"value": "8.9",
+						"type": "text",
+						"enabled": true
+					},
+					{
+						"key": "date",
+						"value": "10/23/2016",
+						"type": "text",
+						"enabled": true
+					},
+					{
+						"key": "description",
+						"value": "this is a test beer 2",
+						"type": "text",
+						"enabled": true
+					}
+				],
+				"dataMode": "urlencoded",
+				"tests": "tests[\"Status code is 204\"] = responseCode.code === 204;\n\n",
+				"currentHelper": "normal",
+				"helperAttributes": {},
+				"time": 1477290445732,
+				"name": "removing a beer",
+				"description": "remove test Beer",
+				"collectionId": "ab5630fb-73d7-2bc1-9df7-a17e0c7116f0",
+				"responses": []
+			}
+		],
+		"timestamp": 1477281623754,
+		"synced": false,
+		"syncedFilename": "",
+		"remote_id": 0,
+		"remoteLink": "",
+		"remoteLinkUpdatedAt": null,
+		"public": false,
+		"owner": "1100903",
+		"subscribed": false,
+		"createdAt": 1477281623799,
+		"updatedAt": 1477290037117,
+		"write": true,
+		"isDeleted": false,
+		"published": false,
+		"favorite": false,
+		"permissions": {},
+		"syncedPermissions": {}
+	},
+	"folder": null,
+	"environment": null,
+	"globals": [
+		{
+			"key": "newStyle",
+			"type": "text",
+			"value": "580da9e71ef3c33b98e122a4",
+			"enabled": true
+		},
+		{
+			"key": "newBeer",
+			"type": "text",
+			"value": "580da9e61ef3c33b98e122a2",
+			"enabled": true
+		}
+	],
+	"results": [
+		{
+			"id": "5a7896f4-7d12-0cd9-0a3b-5300b9624d36",
+			"name": "get all beers",
+			"url": "localhost:8080/beer/",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				147
+			],
+			"allTests": [
+				{}
+			],
+			"time": 147,
+			"totalRequestTime": 147,
+			"iterationResults": {}
+		},
+		{
+			"id": "54f27ccb-3186-f326-ebb9-9bb9861d2d84",
+			"name": "Add test Beer 2",
+			"url": "localhost:8080/beer/",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 201,
+				"name": "Created",
+				"detail": "The request has been fulfilled and resulted in a new resource being created."
+			},
+			"tests": {
+				"Successful POST request": true,
+				"ibu": true,
+				"location": true,
+				"name": true,
+				"style": true,
+				"alcohol_content": true
+			},
+			"testPassFailCounts": {
+				"Successful POST request": {
+					"pass": 1,
+					"fail": 0
+				},
+				"ibu": {
+					"pass": 1,
+					"fail": 0
+				},
+				"location": {
+					"pass": 1,
+					"fail": 0
+				},
+				"name": {
+					"pass": 1,
+					"fail": 0
+				},
+				"style": {
+					"pass": 1,
+					"fail": 0
+				},
+				"alcohol_content": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				80
+			],
+			"allTests": [
+				{
+					"Successful POST request": true,
+					"ibu": true,
+					"location": true,
+					"name": true,
+					"style": true,
+					"alcohol_content": true
+				}
+			],
+			"time": 80,
+			"totalRequestTime": 80,
+			"iterationResults": {}
+		},
+		{
+			"id": "8cfd232b-ff05-41eb-f434-2d08ea6c13b5",
+			"name": "test adding bad reference to a style",
+			"url": "localhost:8080/beer/",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request",
+				"detail": "The request cannot be fulfilled due to bad syntax."
+			},
+			"tests": {
+				"Bad POST request": true
+			},
+			"testPassFailCounts": {
+				"Bad POST request": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				8
+			],
+			"allTests": [
+				{
+					"Bad POST request": true
+				}
+			],
+			"time": 8,
+			"totalRequestTime": 8,
+			"iterationResults": {}
+		},
+		{
+			"id": "598c1b91-5c2c-548a-583a-acf9a82034a0",
+			"name": "look up beer",
+			"url": "localhost:8080/beer/{{newBeer}}",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				120
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			],
+			"time": 120,
+			"totalRequestTime": 120,
+			"iterationResults": {}
+		},
+		{
+			"id": "ea8fcf02-0c81-a80c-dfa6-26fd4ad18952",
+			"name": "updating a beer",
+			"url": "localhost:8080/beer/{{newBeer}}",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"tests": {
+				"ibu": true,
+				"description": true,
+				"name": true,
+				"style": true,
+				"alcohol_content": true,
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"ibu": {
+					"pass": 1,
+					"fail": 0
+				},
+				"description": {
+					"pass": 1,
+					"fail": 0
+				},
+				"name": {
+					"pass": 1,
+					"fail": 0
+				},
+				"style": {
+					"pass": 1,
+					"fail": 0
+				},
+				"alcohol_content": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				129
+			],
+			"allTests": [
+				{
+					"ibu": true,
+					"description": true,
+					"name": true,
+					"style": true,
+					"alcohol_content": true,
+					"Status code is 200": true
+				}
+			],
+			"time": 129,
+			"totalRequestTime": 129,
+			"iterationResults": {}
+		},
+		{
+			"id": "d941b17d-da55-3a65-23c8-b0f4a54359fc",
+			"name": "look up beer after update",
+			"url": "localhost:8080/beer/{{newBeer}}",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				64
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			],
+			"time": 64,
+			"totalRequestTime": 64,
+			"iterationResults": {}
+		},
+		{
+			"id": "35499bb4-8ab6-3b86-88ad-a0fb78b44f83",
+			"name": "get all styles",
+			"url": "localhost:8080/style",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				360
+			],
+			"allTests": [
+				{}
+			],
+			"time": 360,
+			"totalRequestTime": 360,
+			"iterationResults": {}
+		},
+		{
+			"id": "5aac7fee-bacf-16a5-abaf-047117b3ff96",
+			"name": "add style",
+			"url": "localhost:8080/style",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 201,
+				"name": "Created",
+				"detail": "The request has been fulfilled and resulted in a new resource being created."
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				99
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			],
+			"time": 99,
+			"totalRequestTime": 99,
+			"iterationResults": {}
+		},
+		{
+			"id": "87b63632-2c1c-c216-a71e-27d07be6f1b5",
+			"name": "view a style",
+			"url": "localhost:8080/style/{{newStyle}}",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"tests": {
+				"Status code is 200": true,
+				"newStlye": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"newStlye": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				88
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"newStlye": true
+				}
+			],
+			"time": 88,
+			"totalRequestTime": 88,
+			"iterationResults": {}
+		},
+		{
+			"id": "2c72850b-b1d9-9697-7e34-f515b7b56bd1",
+			"name": "update style ",
+			"url": "localhost:8080/style/{{newStyle}}",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"tests": {
+				"Updated Value is IPA": true,
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Updated Value is IPA": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				117
+			],
+			"allTests": [
+				{
+					"Updated Value is IPA": true,
+					"Status code is 200": true
+				}
+			],
+			"time": 117,
+			"totalRequestTime": 117,
+			"iterationResults": {}
+		},
+		{
+			"id": "3d8d4a6c-21e5-9e15-a329-d22cb371dde5",
+			"name": "view a style after update",
+			"url": "localhost:8080/style/{{newStyle}}",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"tests": {
+				"Status code is 200": true,
+				"newStlye": false
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"newStlye": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				38
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"newStlye": false
+				}
+			],
+			"time": 38,
+			"totalRequestTime": 38,
+			"iterationResults": {}
+		},
+		{
+			"id": "cd52ec4d-595a-9d2a-2c0b-310e50591b51",
+			"name": "updating a beer with new Style",
+			"url": "localhost:8080/beer/{{newBeer}}",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"tests": {
+				"ibu": true,
+				"description": true,
+				"name": true,
+				"alcohol_content": true,
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"ibu": {
+					"pass": 1,
+					"fail": 0
+				},
+				"description": {
+					"pass": 1,
+					"fail": 0
+				},
+				"name": {
+					"pass": 1,
+					"fail": 0
+				},
+				"alcohol_content": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				77
+			],
+			"allTests": [
+				{
+					"ibu": true,
+					"description": true,
+					"name": true,
+					"alcohol_content": true,
+					"Status code is 200": true
+				}
+			],
+			"time": 77,
+			"totalRequestTime": 77,
+			"iterationResults": {}
+		},
+		{
+			"id": "2b85a506-8ee7-ceee-6954-7378079b6591",
+			"name": "delete a style",
+			"url": "localhost:8080/style/{{newStyle}}",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 204,
+				"name": "No Content",
+				"detail": "The server successfully processed the request, but is not returning any content."
+			},
+			"tests": {
+				"Status code is 204": true
+			},
+			"testPassFailCounts": {
+				"Status code is 204": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				73
+			],
+			"allTests": [
+				{
+					"Status code is 204": true
+				}
+			],
+			"time": 73,
+			"totalRequestTime": 73,
+			"iterationResults": {}
+		},
+		{
+			"id": "a50053de-3288-5d0a-9541-3e28556910fb",
+			"name": "look up beer after style removed",
+			"url": "localhost:8080/beer/{{newBeer}}",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"tests": {
+				"Status code is 200": true,
+				"removes style": false
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"removes style": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				40
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"removes style": false
+				}
+			],
+			"time": 40,
+			"totalRequestTime": 40,
+			"iterationResults": {}
+		},
+		{
+			"id": "f9306843-6bc5-6b07-11bf-d4a93b73be0d",
+			"name": "removing a beer",
+			"url": "localhost:8080/beer/{{newBeer}}",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 204,
+				"name": "No Content",
+				"detail": "The server successfully processed the request, but is not returning any content."
+			},
+			"tests": {
+				"Status code is 204": true
+			},
+			"testPassFailCounts": {
+				"Status code is 204": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				77
+			],
+			"allTests": [
+				{
+					"Status code is 204": true
+				}
+			],
+			"time": 77,
+			"totalRequestTime": 77,
+			"iterationResults": {}
+		}
+	],
+	"totalPass": 29,
+	"totalFail": 2,
+	"totalTime": 1517,
+	"lifecycle": "done",
+	"willStop": false,
+	"requests": [
+		{
+			"name": "get all beers",
+			"id": "5a7896f4-7d12-0cd9-0a3b-5300b9624d36",
+			"url": "localhost:8080/beer/",
+			"time": 147,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"testPassFailCounts": {},
+			"gridTitles": [],
+			"gridData": [
+				[]
+			],
+			"tests": {}
+		},
+		{
+			"name": "Add test Beer 2",
+			"id": "54f27ccb-3186-f326-ebb9-9bb9861d2d84",
+			"url": "localhost:8080/beer/",
+			"time": 80,
+			"responseCode": {
+				"code": 201,
+				"name": "Created",
+				"detail": "The request has been fulfilled and resulted in a new resource being created."
+			},
+			"testPassFailCounts": {
+				"Successful POST request": {
+					"pass": 1,
+					"fail": 0
+				},
+				"ibu": {
+					"pass": 1,
+					"fail": 0
+				},
+				"location": {
+					"pass": 1,
+					"fail": 0
+				},
+				"name": {
+					"pass": 1,
+					"fail": 0
+				},
+				"style": {
+					"pass": 1,
+					"fail": 0
+				},
+				"alcohol_content": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"gridTitles": [
+				"Successful POST request",
+				"ibu",
+				"location",
+				"name",
+				"style",
+				"alcohol_content"
+			],
+			"gridData": [
+				[
+					true,
+					true,
+					true,
+					true,
+					true,
+					true
+				]
+			],
+			"tests": {
+				"Successful POST request": true,
+				"ibu": true,
+				"location": true,
+				"name": true,
+				"style": true,
+				"alcohol_content": true
+			}
+		},
+		{
+			"name": "test adding bad reference to a style",
+			"id": "8cfd232b-ff05-41eb-f434-2d08ea6c13b5",
+			"url": "localhost:8080/beer/",
+			"time": 8,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request",
+				"detail": "The request cannot be fulfilled due to bad syntax."
+			},
+			"testPassFailCounts": {
+				"Bad POST request": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"gridTitles": [
+				"Bad POST request"
+			],
+			"gridData": [
+				[
+					true
+				]
+			],
+			"tests": {
+				"Bad POST request": true
+			}
+		},
+		{
+			"name": "look up beer",
+			"id": "598c1b91-5c2c-548a-583a-acf9a82034a0",
+			"url": "localhost:8080/beer/{{newBeer}}",
+			"time": 120,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"gridTitles": [
+				"Status code is 200"
+			],
+			"gridData": [
+				[
+					true
+				]
+			],
+			"tests": {
+				"Status code is 200": true
+			}
+		},
+		{
+			"name": "updating a beer",
+			"id": "ea8fcf02-0c81-a80c-dfa6-26fd4ad18952",
+			"url": "localhost:8080/beer/{{newBeer}}",
+			"time": 129,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"testPassFailCounts": {
+				"ibu": {
+					"pass": 1,
+					"fail": 0
+				},
+				"description": {
+					"pass": 1,
+					"fail": 0
+				},
+				"name": {
+					"pass": 1,
+					"fail": 0
+				},
+				"style": {
+					"pass": 1,
+					"fail": 0
+				},
+				"alcohol_content": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"gridTitles": [
+				"ibu",
+				"description",
+				"name",
+				"style",
+				"alcohol_content",
+				"Status code is 200"
+			],
+			"gridData": [
+				[
+					true,
+					true,
+					true,
+					true,
+					true,
+					true
+				]
+			],
+			"tests": {
+				"ibu": true,
+				"description": true,
+				"name": true,
+				"style": true,
+				"alcohol_content": true,
+				"Status code is 200": true
+			}
+		},
+		{
+			"name": "look up beer after update",
+			"id": "d941b17d-da55-3a65-23c8-b0f4a54359fc",
+			"url": "localhost:8080/beer/{{newBeer}}",
+			"time": 64,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"gridTitles": [
+				"Status code is 200"
+			],
+			"gridData": [
+				[
+					true
+				]
+			],
+			"tests": {
+				"Status code is 200": true
+			}
+		},
+		{
+			"name": "get all styles",
+			"id": "35499bb4-8ab6-3b86-88ad-a0fb78b44f83",
+			"url": "localhost:8080/style",
+			"time": 360,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"testPassFailCounts": {},
+			"gridTitles": [],
+			"gridData": [
+				[]
+			],
+			"tests": {}
+		},
+		{
+			"name": "add style",
+			"id": "5aac7fee-bacf-16a5-abaf-047117b3ff96",
+			"url": "localhost:8080/style",
+			"time": 99,
+			"responseCode": {
+				"code": 201,
+				"name": "Created",
+				"detail": "The request has been fulfilled and resulted in a new resource being created."
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"gridTitles": [
+				"Status code is 200"
+			],
+			"gridData": [
+				[
+					true
+				]
+			],
+			"tests": {
+				"Status code is 200": true
+			}
+		},
+		{
+			"name": "view a style",
+			"id": "87b63632-2c1c-c216-a71e-27d07be6f1b5",
+			"url": "localhost:8080/style/{{newStyle}}",
+			"time": 88,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"newStlye": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"gridTitles": [
+				"Status code is 200",
+				"newStlye"
+			],
+			"gridData": [
+				[
+					true,
+					true
+				]
+			],
+			"tests": {
+				"Status code is 200": true,
+				"newStlye": true
+			}
+		},
+		{
+			"name": "update style ",
+			"id": "2c72850b-b1d9-9697-7e34-f515b7b56bd1",
+			"url": "localhost:8080/style/{{newStyle}}",
+			"time": 117,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"testPassFailCounts": {
+				"Updated Value is IPA": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"gridTitles": [
+				"Updated Value is IPA",
+				"Status code is 200"
+			],
+			"gridData": [
+				[
+					true,
+					true
+				]
+			],
+			"tests": {
+				"Updated Value is IPA": true,
+				"Status code is 200": true
+			}
+		},
+		{
+			"name": "view a style after update",
+			"id": "3d8d4a6c-21e5-9e15-a329-d22cb371dde5",
+			"url": "localhost:8080/style/{{newStyle}}",
+			"time": 38,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"newStlye": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"gridTitles": [
+				"Status code is 200",
+				"newStlye"
+			],
+			"gridData": [
+				[
+					true,
+					false
+				]
+			],
+			"tests": {
+				"Status code is 200": true,
+				"newStlye": false
+			}
+		},
+		{
+			"name": "updating a beer with new Style",
+			"id": "cd52ec4d-595a-9d2a-2c0b-310e50591b51",
+			"url": "localhost:8080/beer/{{newBeer}}",
+			"time": 77,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"testPassFailCounts": {
+				"ibu": {
+					"pass": 1,
+					"fail": 0
+				},
+				"description": {
+					"pass": 1,
+					"fail": 0
+				},
+				"name": {
+					"pass": 1,
+					"fail": 0
+				},
+				"alcohol_content": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"gridTitles": [
+				"ibu",
+				"description",
+				"name",
+				"alcohol_content",
+				"Status code is 200"
+			],
+			"gridData": [
+				[
+					true,
+					true,
+					true,
+					true,
+					true
+				]
+			],
+			"tests": {
+				"ibu": true,
+				"description": true,
+				"name": true,
+				"alcohol_content": true,
+				"Status code is 200": true
+			}
+		},
+		{
+			"name": "delete a style",
+			"id": "2b85a506-8ee7-ceee-6954-7378079b6591",
+			"url": "localhost:8080/style/{{newStyle}}",
+			"time": 73,
+			"responseCode": {
+				"code": 204,
+				"name": "No Content",
+				"detail": "The server successfully processed the request, but is not returning any content."
+			},
+			"testPassFailCounts": {
+				"Status code is 204": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"gridTitles": [
+				"Status code is 204"
+			],
+			"gridData": [
+				[
+					true
+				]
+			],
+			"tests": {
+				"Status code is 204": true
+			}
+		},
+		{
+			"name": "look up beer after style removed",
+			"id": "a50053de-3288-5d0a-9541-3e28556910fb",
+			"url": "localhost:8080/beer/{{newBeer}}",
+			"time": 40,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"removes style": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"gridTitles": [
+				"Status code is 200",
+				"removes style"
+			],
+			"gridData": [
+				[
+					true,
+					false
+				]
+			],
+			"tests": {
+				"Status code is 200": true,
+				"removes style": false
+			}
+		},
+		{
+			"name": "removing a beer",
+			"id": "f9306843-6bc5-6b07-11bf-d4a93b73be0d",
+			"url": "localhost:8080/beer/{{newBeer}}",
+			"time": 77,
+			"responseCode": {
+				"code": 204,
+				"name": "No Content",
+				"detail": "The server successfully processed the request, but is not returning any content."
+			},
+			"testPassFailCounts": {
+				"Status code is 204": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"gridTitles": [
+				"Status code is 204"
+			],
+			"gridData": [
+				[
+					true
+				]
+			],
+			"tests": {
+				"Status code is 204": true
+			}
+		}
+	],
+	"synced": false
+}

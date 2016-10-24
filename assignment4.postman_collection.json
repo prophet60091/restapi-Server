@@ -1,0 +1,1058 @@
+{
+	"id": "ab5630fb-73d7-2bc1-9df7-a17e0c7116f0",
+	"name": "assignment4",
+	"description": "",
+	"order": [
+		"5a7896f4-7d12-0cd9-0a3b-5300b9624d36",
+		"54f27ccb-3186-f326-ebb9-9bb9861d2d84",
+		"8cfd232b-ff05-41eb-f434-2d08ea6c13b5",
+		"598c1b91-5c2c-548a-583a-acf9a82034a0",
+		"ea8fcf02-0c81-a80c-dfa6-26fd4ad18952",
+		"d941b17d-da55-3a65-23c8-b0f4a54359fc",
+		"35499bb4-8ab6-3b86-88ad-a0fb78b44f83",
+		"5aac7fee-bacf-16a5-abaf-047117b3ff96",
+		"87b63632-2c1c-c216-a71e-27d07be6f1b5",
+		"2c72850b-b1d9-9697-7e34-f515b7b56bd1",
+		"3d8d4a6c-21e5-9e15-a329-d22cb371dde5",
+		"cd52ec4d-595a-9d2a-2c0b-310e50591b51",
+		"2b85a506-8ee7-ceee-6954-7378079b6591",
+		"a50053de-3288-5d0a-9541-3e28556910fb",
+		"f9306843-6bc5-6b07-11bf-d4a93b73be0d"
+	],
+	"folders": [],
+	"timestamp": 1477281623754,
+	"owner": "1100903",
+	"public": false,
+	"requests": [
+		{
+			"id": "2b85a506-8ee7-ceee-6954-7378079b6591",
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"url": "{{url}}/style/{{newStyle}}",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "DELETE",
+			"data": [
+				{
+					"key": "ibu",
+					"value": "2100",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "brewery",
+					"value": "580bafdef36d2847090b8a30",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "name",
+					"value": "test Beer 2",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "style",
+					"value": "580bf28fdcba0f490c72e3d6",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "alcohol_content",
+					"value": "8.9",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "date",
+					"value": "10/23/2016",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "description",
+					"value": "this is a test beer 2",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"version": 2,
+			"tests": "tests[\"Status code is 204\"] = responseCode.code === 204;\n\n",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1477291063856,
+			"name": "delete a style",
+			"description": "",
+			"collectionId": "ab5630fb-73d7-2bc1-9df7-a17e0c7116f0",
+			"responses": []
+		},
+		{
+			"id": "2c72850b-b1d9-9697-7e34-f515b7b56bd1",
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"url": "{{url}}/style/{{newStyle}}",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "PUT",
+			"data": [
+				{
+					"key": "name",
+					"value": "IPA",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "description",
+					"value": "this is a test description of ....",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"version": 2,
+			"tests": "\n\nvar jsonData = JSON.parse(responseBody);\ntests[\"Updated Value is IPA\"] = jsonData.name === \"IPA\";\n\ntests[\"Status code is 200\"] = responseCode.code === 200;",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1477291038096,
+			"name": "update style ",
+			"description": "",
+			"collectionId": "ab5630fb-73d7-2bc1-9df7-a17e0c7116f0",
+			"responses": []
+		},
+		{
+			"id": "35499bb4-8ab6-3b86-88ad-a0fb78b44f83",
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"url": "{{url}}/style",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "GET",
+			"data": [
+				{
+					"key": "ibu",
+					"value": "2100",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "brewery",
+					"value": "580bafdef36d2847090b8a30",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "name",
+					"value": "test Beer 2",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "style",
+					"value": "580bf28fdcba0f490c72e3d6",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "alcohol_content",
+					"value": "8.9",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "date",
+					"value": "10/23/2016",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "description",
+					"value": "this is a test beer 2",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1477291022666,
+			"name": "get all styles",
+			"description": "get all styles",
+			"collectionId": "ab5630fb-73d7-2bc1-9df7-a17e0c7116f0",
+			"responses": []
+		},
+		{
+			"id": "3d8d4a6c-21e5-9e15-a329-d22cb371dde5",
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"url": "{{url}}/style/{{newStyle}}",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "GET",
+			"data": [
+				{
+					"key": "ibu",
+					"value": "2100",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "brewery",
+					"value": "580bafdef36d2847090b8a30",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "name",
+					"value": "test Beer 2",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "style",
+					"value": "580bf28fdcba0f490c72e3d6",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "alcohol_content",
+					"value": "8.9",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "date",
+					"value": "10/23/2016",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "description",
+					"value": "this is a test beer 2",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"version": 2,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\n\n\nvar jsonData = JSON.parse(responseBody);\ntests[\"newStlye\"] = jsonData.name === \"added style\";",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1477291042518,
+			"name": "view a style after update",
+			"description": "",
+			"collectionId": "ab5630fb-73d7-2bc1-9df7-a17e0c7116f0",
+			"responses": []
+		},
+		{
+			"id": "54f27ccb-3186-f326-ebb9-9bb9861d2d84",
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"url": "{{url}}/beer/",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "ibu",
+					"value": "2100",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "location",
+					"value": "580bafdef36d2847090b8a30",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "name",
+					"value": "test Beer 2",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "style",
+					"value": "580bf28fdcba0f490c72e3d6",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "alcohol_content",
+					"value": "8.9",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "date",
+					"value": "10/23/2016",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "description",
+					"value": "this is a test beer 2",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"version": 2,
+			"tests": "tests[\"Successful POST request\"] = responseCode.code === 201 || responseCode.code === 202;\n\nvar jsonData = JSON.parse(responseBody);\ntests[\"ibu\"] = jsonData.ibu === 2100;\ntests[\"location\"] = jsonData.location === \"580bafdef36d2847090b8a30\";\ntests[\"name\"] = jsonData.name === \"test Beer 2\";\ntests[\"style\"] = jsonData.style === \"580bf28fdcba0f490c72e3d6\";\ntests[\"alcohol_content\"] = jsonData.alcohol_content === 8.9;\n\n\npostman.setGlobalVariable(\"newBeer\", jsonData._id);\n",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1477290993815,
+			"name": "Add test Beer 2",
+			"description": "Add test Beer 2",
+			"collectionId": "ab5630fb-73d7-2bc1-9df7-a17e0c7116f0",
+			"responses": []
+		},
+		{
+			"id": "598c1b91-5c2c-548a-583a-acf9a82034a0",
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"url": "{{url}}/beer/{{newBeer}}",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "GET",
+			"data": [
+				{
+					"key": "ibu",
+					"value": "2100",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "brewery",
+					"value": "580bafdef36d2847090b8a30",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "name",
+					"value": "test Beer 2",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "style",
+					"value": "580bf28fdcba0f490c72e3d6",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "alcohol_content",
+					"value": "8.9",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "date",
+					"value": "10/23/2016",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "description",
+					"value": "this is a test beer 2",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\n",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1477291004831,
+			"name": "look up beer",
+			"description": "lookup a beer",
+			"collectionId": "ab5630fb-73d7-2bc1-9df7-a17e0c7116f0",
+			"responses": [
+				{
+					"status": "",
+					"responseCode": {
+						"code": 200,
+						"name": "OK",
+						"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+					},
+					"time": 69,
+					"headers": [
+						{
+							"name": "Access-Control-Allow-Credentials",
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true",
+							"description": "Indicates whether or not the response to the request can be exposed when the credentials flag is true. When used as part of a response to a preflight request, this indicates whether or not the actual request can be made using credentials."
+						},
+						{
+							"name": "Access-Control-Allow-Headers",
+							"key": "Access-Control-Allow-Headers",
+							"value": "Accept, Authorization, Content-Type, X-Requested-With, Range",
+							"description": "Used in response to a preflight request to indicate which HTTP headers can be used when making the actual request."
+						},
+						{
+							"name": "Access-Control-Allow-Methods",
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET,HEAD,PUT,PATCH,POST,DELETE",
+							"description": "Specifies the method or methods allowed when accessing the resource. This is used in response to a preflight request."
+						},
+						{
+							"name": "Access-Control-Allow-Origin",
+							"key": "Access-Control-Allow-Origin",
+							"value": "*",
+							"description": "Specifies a URI that may access the resource. For requests without credentials, the server may specify '*' as a wildcard, thereby allowing any origin to access the resource."
+						},
+						{
+							"name": "Access-Control-Expose-Headers",
+							"key": "Access-Control-Expose-Headers",
+							"value": "Content-Length",
+							"description": "Lets a server whitelist headers that browsers are allowed to access."
+						},
+						{
+							"name": "Cache-control",
+							"key": "Cache-control",
+							"value": "public, max-age=45000",
+							"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
+						},
+						{
+							"name": "Connection",
+							"key": "Connection",
+							"value": "keep-alive",
+							"description": "Options that are desired for the connection"
+						},
+						{
+							"name": "Content-Length",
+							"key": "Content-Length",
+							"value": "237",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"name": "Content-Type",
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "Date",
+							"key": "Date",
+							"value": "Mon, 24 Oct 2016 04:14:50 GMT",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"name": "ETag",
+							"key": "ETag",
+							"value": "W/\"ed-OA90M7ODcLwgSi48fRTlHA\"",
+							"description": "An identifier for a specific version of a resource, often a message digest"
+						},
+						{
+							"name": "X-Powered-By",
+							"key": "X-Powered-By",
+							"value": "Express",
+							"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+						}
+					],
+					"cookies": [],
+					"mime": "",
+					"text": "{\"_id\":\"580d63dbbe921524acee9b48\",\"ibu\":2100,\"name\":\"test Beer\",\"style\":\"580bf28fdcba0f490c72e3d6\",\"alcohol_content\":8.9,\"date\":\"2016-10-23T06:00:00.000Z\",\"description\":\"this is a test beer\",\"__v\":0,\"location\":\"580bc15adcba0f490c72d64b\"}",
+					"language": "javascript",
+					"rawDataType": "text",
+					"previewType": "html",
+					"searchResultScrolledTo": -1,
+					"forceNoPretty": false,
+					"write": true,
+					"empty": false,
+					"failed": false,
+					"state": {
+						"size": "normal"
+					},
+					"id": "f46d5915-6ebc-527e-3653-82bdb7d6d0b8",
+					"name": "beer view",
+					"request": {
+						"url": "localhost:8080/beer/580d63dbbe921524acee9b48",
+						"headers": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"enabled": true,
+								"description": "The mime type of this content"
+							}
+						],
+						"data": [
+							{
+								"key": "ibu",
+								"value": "2100",
+								"type": "text",
+								"enabled": true
+							},
+							{
+								"key": "brewery",
+								"value": "580bafdef36d2847090b8a30",
+								"type": "text",
+								"enabled": true
+							},
+							{
+								"key": "name",
+								"value": "test Beer 2",
+								"type": "text",
+								"enabled": true
+							},
+							{
+								"key": "style",
+								"value": "580bf28fdcba0f490c72e3d6",
+								"type": "text",
+								"enabled": true
+							},
+							{
+								"key": "alcohol_content",
+								"value": "8.9",
+								"type": "text",
+								"enabled": true
+							},
+							{
+								"key": "date",
+								"value": "10/23/2016",
+								"type": "text",
+								"enabled": true
+							},
+							{
+								"key": "description",
+								"value": "this is a test beer 2",
+								"type": "text",
+								"enabled": true
+							}
+						],
+						"method": "GET",
+						"dataMode": "urlencoded"
+					}
+				}
+			]
+		},
+		{
+			"id": "5a7896f4-7d12-0cd9-0a3b-5300b9624d36",
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"url": "{{url}}/beer/",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "GET",
+			"data": [
+				{
+					"key": "ibu",
+					"value": "2100",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "brewery",
+					"value": "580bafdef36d2847090b8a30",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "name",
+					"value": "test Beer 2",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "style",
+					"value": "580bf28fdcba0f490c72e3d6",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "alcohol_content",
+					"value": "8.9",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "date",
+					"value": "10/23/2016",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "description",
+					"value": "this is a test beer 2",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1477290819588,
+			"name": "get all beers",
+			"description": "get all beers",
+			"collectionId": "ab5630fb-73d7-2bc1-9df7-a17e0c7116f0",
+			"responses": []
+		},
+		{
+			"id": "5aac7fee-bacf-16a5-abaf-047117b3ff96",
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"url": "{{url}}/style",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "name",
+					"value": "added style",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "description",
+					"value": "the description",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "related_styles",
+					"value": "580bf28fdcba0f490c72e3d6",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"version": 2,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 201;\nvar jsonData = JSON.parse(responseBody);\n\n//get the new id from the data generated\npostman.setEnvironmentVariable(\"newStyle\", jsonData._id);\n\n\npostman.setGlobalVariable(\"newStyle\", jsonData._id);",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1477291027001,
+			"name": "add style",
+			"description": "",
+			"collectionId": "ab5630fb-73d7-2bc1-9df7-a17e0c7116f0",
+			"responses": []
+		},
+		{
+			"id": "87b63632-2c1c-c216-a71e-27d07be6f1b5",
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"url": "{{url}}/style/{{newStyle}}",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "GET",
+			"data": [
+				{
+					"key": "ibu",
+					"value": "2100",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "brewery",
+					"value": "580bafdef36d2847090b8a30",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "name",
+					"value": "test Beer 2",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "style",
+					"value": "580bf28fdcba0f490c72e3d6",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "alcohol_content",
+					"value": "8.9",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "date",
+					"value": "10/23/2016",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "description",
+					"value": "this is a test beer 2",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"version": 2,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\n\n\nvar jsonData = JSON.parse(responseBody);\ntests[\"newStlye\"] = jsonData.name === \"added style\";",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1477291032195,
+			"name": "view a style",
+			"description": "",
+			"collectionId": "ab5630fb-73d7-2bc1-9df7-a17e0c7116f0",
+			"responses": []
+		},
+		{
+			"id": "8cfd232b-ff05-41eb-f434-2d08ea6c13b5",
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"url": "{{url}}/beer/",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "ibu",
+					"value": "2100",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "location",
+					"value": "doodle",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "name",
+					"value": "test Beer 2",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "style",
+					"value": "580bf28fdcba0f490c72e3d6",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "alcohol_content",
+					"value": "8.9",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "date",
+					"value": "10/23/2016",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "description",
+					"value": "this is a test beer 2",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"version": 2,
+			"tests": "tests[\"Bad POST request\"] = responseCode.code !== 201 || responseCode.code !== 202;\n\n// var jsonData = JSON.parse(responseBody);\n// tests[\"ibu\"] = jsonData.ibu === 2100;\n// tests[\"brewery\"] = jsonData.brewery === \"580bafdef36d2847090b8a30\";\n// tests[\"name\"] = jsonData.name === \"test Beer 2\";\n// tests[\"style\"] =jsonData.style === \"580bf28fdcba0f490c72e3d6\"\n// tests[\"alcohol_content\" = jsonData.alohol_content === 8.9;\n\n",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1477290999259,
+			"name": "test adding bad reference to a style",
+			"description": "BAD test Beer 2",
+			"collectionId": "ab5630fb-73d7-2bc1-9df7-a17e0c7116f0",
+			"responses": []
+		},
+		{
+			"id": "a50053de-3288-5d0a-9541-3e28556910fb",
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"url": "{{url}}/beer/{{newBeer}}",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "GET",
+			"data": [
+				{
+					"key": "ibu",
+					"value": "2100",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "brewery",
+					"value": "580bafdef36d2847090b8a30",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "name",
+					"value": "test Beer 2",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "style",
+					"value": "580bf28fdcba0f490c72e3d6",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "alcohol_content",
+					"value": "8.9",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "date",
+					"value": "10/23/2016",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "description",
+					"value": "this is a test beer 2",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\n\n\nvar jsonData = JSON.parse(responseBody);\ntests[\"removes style\"] = jsonData.style === '';",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1477291070121,
+			"name": "look up beer after style removed",
+			"description": "lookup a beer",
+			"collectionId": "ab5630fb-73d7-2bc1-9df7-a17e0c7116f0",
+			"responses": []
+		},
+		{
+			"id": "cd52ec4d-595a-9d2a-2c0b-310e50591b51",
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"url": "{{url}}/beer/{{newBeer}}",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "PUT",
+			"data": [
+				{
+					"key": "ibu",
+					"value": "2100",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "location",
+					"value": "580bafdef36d2847090b8a30",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "name",
+					"value": "test Beer 2",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "style",
+					"value": "{{newStyle}}",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "alcohol_content",
+					"value": "3.2",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "date",
+					"value": "10/23/2016",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "description",
+					"value": "UPDATED BEER",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"version": 2,
+			"tests": "\nvar jsonData = JSON.parse(responseBody);\ntests[\"ibu\"] = jsonData.ibu === 2100;\ntests[\"description\"] = jsonData.description === \"UPDATED BEER\";\ntests[\"name\"] = jsonData.name === \"test Beer 2\";\ntests[\"alcohol_content\"] = jsonData.alcohol_content === 3.2;\n\ntests[\"Status code is 200\"] = responseCode.code === 200;",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1477291049064,
+			"name": "updating a beer with new Style",
+			"description": "",
+			"collectionId": "ab5630fb-73d7-2bc1-9df7-a17e0c7116f0",
+			"responses": []
+		},
+		{
+			"id": "d941b17d-da55-3a65-23c8-b0f4a54359fc",
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"url": "{{url}}/beer/{{newBeer}}",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "GET",
+			"data": [
+				{
+					"key": "ibu",
+					"value": "2100",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "brewery",
+					"value": "580bafdef36d2847090b8a30",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "name",
+					"value": "test Beer 2",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "style",
+					"value": "580bf28fdcba0f490c72e3d6",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "alcohol_content",
+					"value": "8.9",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "date",
+					"value": "10/23/2016",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "description",
+					"value": "this is a test beer 2",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"version": 2,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\n",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1477291015366,
+			"name": "look up beer after update",
+			"description": "lookup a beer",
+			"collectionId": "ab5630fb-73d7-2bc1-9df7-a17e0c7116f0",
+			"responses": []
+		},
+		{
+			"id": "ea8fcf02-0c81-a80c-dfa6-26fd4ad18952",
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"url": "{{url}}/beer/{{newBeer}}",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "PUT",
+			"data": [
+				{
+					"key": "ibu",
+					"value": "2100",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "location",
+					"value": "580bafdef36d2847090b8a30",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "name",
+					"value": "test Beer 2",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "style",
+					"value": "580bf28fdcba0f490c72e3d6",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "alcohol_content",
+					"value": "3.2",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "date",
+					"value": "10/23/2016",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "description",
+					"value": "this is an updated put",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"version": 2,
+			"tests": "\nvar jsonData = JSON.parse(responseBody);\ntests[\"ibu\"] = jsonData.ibu === 2100;\ntests[\"description\"] = jsonData.description === \"this is an updated put\";\ntests[\"name\"] = jsonData.name === \"test Beer 2\";\ntests[\"style\"] = jsonData.style === \"580bf28fdcba0f490c72e3d6\";\ntests[\"alcohol_content\"] = jsonData.alcohol_content === 3.2;\n\n\n\ntests[\"Status code is 200\"] = responseCode.code === 200;",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1477291010049,
+			"name": "updating a beer",
+			"description": "",
+			"collectionId": "ab5630fb-73d7-2bc1-9df7-a17e0c7116f0",
+			"responses": []
+		},
+		{
+			"id": "f9306843-6bc5-6b07-11bf-d4a93b73be0d",
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"url": "{{url}}/beer/{{newBeer}}",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "DELETE",
+			"data": [
+				{
+					"key": "ibu",
+					"value": "2100",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "brewery",
+					"value": "580bafdef36d2847090b8a30",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "name",
+					"value": "test Beer 2",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "style",
+					"value": "580bf28fdcba0f490c72e3d6",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "alcohol_content",
+					"value": "8.9",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "date",
+					"value": "10/23/2016",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "description",
+					"value": "this is a test beer 2",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"tests": "tests[\"Status code is 204\"] = responseCode.code === 204;\n\n",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1477291074964,
+			"name": "removing a beer",
+			"description": "remove test Beer",
+			"collectionId": "ab5630fb-73d7-2bc1-9df7-a17e0c7116f0",
+			"responses": []
+		}
+	]
+}
