@@ -22,12 +22,14 @@ app.use(methodOverride());
 
 
 // CORS Support
+//http://enable-cors.org/server_expressjs.html
 app.use(function(req, res, next) {
     res.header('Access-Control-Allow-Origin', req.get('Origin') || '*');
     res.header('Access-Control-Allow-Credentials', 'true');
     res.header('Access-Control-Allow-Methods', 'GET,HEAD,PUT,PATCH,POST,DELETE');
     res.header('Access-Control-Expose-Headers', 'Content-Length');
     res.header('Access-Control-Allow-Headers', 'Accept, Authorization, Content-Type, X-Requested-With, Range');
+    res.header ('Cache-control', 'public, max-age=45000');
     if (req.method === 'OPTIONS') {
         return res.send(200);
     } else {
