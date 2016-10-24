@@ -25,7 +25,46 @@ var Resource = require('resourcejs');
 module.exports = function(app, route) {
 
     // Setup the controller for REST;
-    Resource(app, '', route,  app.models.styles).rest();
+    Resource(app, '', route,  app.models.styles).get().post().patch().put().index()
+        .delete({
+
+            after: function(req, res,next){
+                console.log('-------cleaning up beers------');
+                // get the style id
+                var id = res.resource.item._id;
+
+                //set parameters for the search
+                var condition = {style: id}
+                    , update = {style: null }    // set it to null
+                    , options = { multi: true }; // check all beer documents
+                var beer = app.models.beers.model('beers');
+
+                //remove it
+                beer.update(condition, update, options, cb);
+                function cb(err, numAffected){
+                    console.log(numAffected.ok);
+                }
+                console.log('----------------------------');
+
+                // console.log('-------cleaning up internal references------');
+                // // get the style id
+                // var id = res.resource.item._id;
+                //
+                // //find out which styles have it
+                // condition = {style: id};
+                // var styles = app.models.styles.model('styles');
+                //
+                // //remove it
+                // beer.update(condition, {style: null}, cb);
+                // function cb(err, numAffected){
+                //     console.log(numAffected);
+                // }
+                // console.log('----------------------------');
+
+
+                next();
+            }
+        });
 
     // Return middleware.
     return function(req, res, next) {

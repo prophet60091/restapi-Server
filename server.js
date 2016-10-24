@@ -38,7 +38,7 @@ app.use(function(req, res, next) {
 });
 
 // log to console
-app.use(morgan('dev'));
+//app.use(morgan('dev'));
 
 // Connect to MongoDB
 var options = { server: { socketOptions: { keepAlive: 300000, connectTimeoutMS: 30000 } },
