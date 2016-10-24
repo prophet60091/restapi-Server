@@ -20,6 +20,10 @@ var StyleSchema = new mongoose.Schema({
 
 });
 
+StyleSchema.pre('remove', function (next) {
+  app.models.beers.update({style: ""});
+});
+
 // Export the model.
 //module.exports = BeerSchema;
 module.exports = mongoose.model('styles', StyleSchema);
