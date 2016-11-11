@@ -105,8 +105,6 @@ mongoose.connection.once('open', function() {
 
     });
 
-
-
     // Load the routes.
     var routes = require('./routes');
     _.each(routes, function(controller, route) {
