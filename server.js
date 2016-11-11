@@ -38,7 +38,7 @@ app.use(function(req, res, next) {
 });
 
 // log to console
-//app.use(morgan('dev'));
+app.use(morgan('dev'));
 
 // Connect to MongoDB
 var options = { server: { socketOptions: { keepAlive: 300000, connectTimeoutMS: 30000 } },
@@ -62,6 +62,50 @@ mongoose.connection.once('open', function() {
         res.send ('[{"_id":"57f960dfb722d0350c11120b","name":"Decadent","brewery":"ska","style":"Double IPA","alcohol_content":"9","origin":"Durango Colorado","location":"","__v":0},{"_id":"57f99a6b6640400d4c7a1c01","name":"Modus Hoparandi","brewery":"ska","style":" IPA","alcohol_content":"6.5","location":"","origin":"Durango, Colorado","__v":0}]');
         next();
     });
+    app.use('/nman', function(req, res, next){
+
+        var newman = require('newman');
+        var success = false;
+        newman.run({
+            collection: require('./assignment4.postman_collection.json'),
+            environment: require('./live.postman_environment.json'),
+            reporters: 'html',
+            reporter : { html : { export : './newman/htmlResults.html'}}
+        }).on('start', function(err, args){
+            console.log(err);
+
+        }).on('done', function (err, summary){
+            if (err) {
+                //res.send('["msg": "collection run encountered an error."]');
+                console.log(err);
+            }
+            else {
+                //res.send('["msg": "collection run completed."]');
+                console.log(summary);
+                //res.send('Eat a Dick!');
+                success = true;
+
+            }
+        } );
+
+
+        next();
+    });
+    app.use('/report', function(req, res, next){
+
+        res.sendFile('/newman/htmlResults.html',{ "root": './' }, function (err) {
+            if (err) {
+                console.log(err);
+                res.status(err.status).end();
+            }
+            else {
+                console.log('Sent results:');
+            }
+        });
+
+    });
+
+
 
     // Load the routes.
     var routes = require('./routes');

@@ -15,18 +15,19 @@
   "license": "ISC",
   "dependencies": {
     "assert": "^1.4.1",
+    "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.15.2",
     "express": "^4.14.0",
     "lodash": "^2.4.2",
     "method-override": "^2.3.6",
     "mongodb": "^2.1.5",
     "mongoose": "^4.6.3",
+    "morgan": "~1.5.0",
     "nconf": "^0.8.4",
-    "resourcejs": "^0.1.25",
-    "bcrypt": "",
-    "morgan":"~1.5.0",
+    "newman": "",
     "passport": "^0.3.0",
     "passport-jwt": "^1.2.1",
+    "resourcejs": "^0.1.25",
     "validator": "~6.1.0"
   }
 }
