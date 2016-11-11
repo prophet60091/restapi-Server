@@ -62,7 +62,7 @@ mongoose.connection.once('open', function() {
         res.send ('[{"_id":"57f960dfb722d0350c11120b","name":"Decadent","brewery":"ska","style":"Double IPA","alcohol_content":"9","origin":"Durango Colorado","location":"","__v":0},{"_id":"57f99a6b6640400d4c7a1c01","name":"Modus Hoparandi","brewery":"ska","style":" IPA","alcohol_content":"6.5","location":"","origin":"Durango, Colorado","__v":0}]');
         next();
     });
-    app.use('/nman', function(req, res, next){
+    app.use('/nman', function(req, res){
 
         var newman = require('newman');
         var success = false;
@@ -80,23 +80,21 @@ mongoose.connection.once('open', function() {
                 console.log(err);
             }
             else {
-                //res.send('["msg": "collection run completed."]');
+                res.send('generated a report');
                 console.log(summary);
-                //res.send('Eat a Dick!');
                 success = true;
-
             }
         } );
 
-
-        next();
     });
-    app.use('/report', function(req, res, next){
+    app.use('/report', function(req, res){
 
         res.sendFile('/newman/htmlResults.html',{ "root": './' }, function (err) {
             if (err) {
                 console.log(err);
+                res.send(err);
                 res.status(err.status).end();
+
             }
             else {
                 console.log('Sent results:');
