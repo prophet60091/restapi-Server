@@ -80,12 +80,11 @@ mongoose.connection.once('open', function() {
                 console.log(err);
             }
             else {
-                res.send('generated a report');
+                res.send('[{"msg":"generated a report"}]');
                 console.log(summary);
                 success = true;
             }
         } );
-
     });
     app.use('/report', function(req, res){
 

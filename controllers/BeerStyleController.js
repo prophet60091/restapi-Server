@@ -1,49 +1,39 @@
-// var restful = require('node-restful');
-// //var Resource = require('resourcejs');
-// module.exports = function(app, route) {
-//
-//   // Setup the controller for REST;
-//   //Resource(app, '', route, app.models.beer).rest(); // we didn't install resources its having issues
-//
-//   var rest = app.resource = restful.model(
-//       'beer',
-//       app.models.beer
-//   ).methods(['get','put','post','delete' ]);
-//
-//   //register the endpoint of the application - (i.e. defines it as a place where a rest api is available)
-//     rest.register(app, route);
-//   console.log(rest);
-//
-//   // Return middleware.
-//   return function(req, res, next) {
-//     //res.send('[{"_id":"57f960dfb722d0350c11120b","name":"Decadent","brewery":"ska","style":"Double IPA","alcohol_content":"9","origin":"Durango Colorado","location":"","__v":0},{"_id":"57f99a6b6640400d4c7a1c01","name":"Modus Hoparandi","brewery":"ska","style":" IPA","alcohol_content":"6.5","location":"","origin":"Durango, Colorado","__v":0}]')
-//     next();
-//   };
-// };
+
 
 var Resource = require('resourcejs');
 module.exports = function(app, route) {
 
   // Setup the controller for REST;
- Resource(app, '/beer/:beerId', route,  app.models.styles).rest();
+ Resource(app, '/beer/:beerId', route,  app.models.styles).rest({
+    before: function(req, res, next) {
+        console.log(route);
+        console.log(app.models.styles)
+    }
 
-
- //     // Add a before handler to include filter and parent information.
- //     before: function(req, res, next) {
- //         req.body.parent = req.params.parentId;
- //         req.modelQuery = this.model.where('parent', req.params.parentId);
- //         next();
- //     }
- // });
+     // // Add a before handler to include filter and parent information.
+     // before: function(req, res, next) {
+     //     req.body.parent = req.params.parentId;
+     //     req.modelQuery = this.model.where('parent', req.params.parentId);
+     //     next();
+     // }
+    /*// The child REST interface.
+     Resource(app, '/parent/:parentId', 'child', Child).rest({
 
      // Add a before handler to include filter and parent information.
+     before: function(req, res, next) {
+     req.body.parent = req.params.parentId;
+     req.modelQuery = this.model.where('parent', req.params.parentId);
+     next();
+     }*/
+
+     // //Add a before handler to include filter and parent information.
      // before: function(req, res, next) {
      //     req.body.beer = req.params.beerId;
      //     req.modelQuery = this.model.where('beer', req.params.beerId);
      //     next();
      // }
 
- //});
+})
 
   // Return middleware.
   return function(req, res, next) {

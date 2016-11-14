@@ -32,15 +32,18 @@ module.exports = function(app, route) {
                 console.log('-------cleaning up beers------');
                 // get the style id
                 var id = res.resource.item._id;
+                console.log(id);
 
-                //set parameters for the search
+                // /set parameters for the search
                 var condition = {style: id}
                     , update = {style: null }    // set it to null
                     , options = { multi: true }; // check all beer documents
+
                 var beer = app.models.beers.model('beers');
 
                 //remove it
                 beer.update(condition, update, options, cb);
+
                 function cb(err, numAffected){
                     console.log(numAffected.ok);
                 }
