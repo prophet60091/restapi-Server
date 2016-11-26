@@ -30,20 +30,20 @@ module.exports = function(app, route) {
             //run, you fools!
             else {
                 gandalf = true;
+                //res.json({success: true, msg: "Successfully created a new user"});
+            }
+            //next();
+        },
+        after:function(req,res,next){
+            if(gandalf){
+                if (res.err) {
+                    return res.json({success: false, msg: res.err});
+                }
                 res.json({success: true, msg: "Successfully created a new user"});
+
             }
             next();
-        },
-        // after:function(req,res,next){
-        //     if(gandalf){
-        //         if (res.err) {
-        //             return res.json({success: false, msg: res.err});
-        //         }
-        //         res.json({success: true, msg: "Successfully created a new user"});
-        //
-        //     }
-        //     //next();
-        // }
+        }
     });
 
     // Return middleware.
