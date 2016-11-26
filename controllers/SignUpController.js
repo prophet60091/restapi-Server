@@ -26,14 +26,16 @@ module.exports = function(app, route) {
 
             //validate the email
             } else if (!validator.isEmail(req.body.email)){
+
                 res.json({success: false, msg: 'Invalid E-mail'});
-            }
+
             //run, you fools!
-            else {
+            }else {
                 gandalf = true;
-                //res.json({success: true, msg: "Successfully created a new user"});
+                res.json({success: true, msg: "Successfully created a new user"});
+                next();
             }
-            next();
+
         }
         // after:function(req,res,next){
         //     if(gandalf){
