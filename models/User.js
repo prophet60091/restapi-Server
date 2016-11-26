@@ -79,4 +79,4 @@ UserSchema.methods.comparePassword = function (passw, callback) {
 
 // Export the model.
 //module.exports = BeerSchema;
-module.exports = mongoose.model('user', UserSchema);
+module.exports = mongoose.model('users', UserSchema);

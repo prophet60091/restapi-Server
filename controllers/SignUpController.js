@@ -13,7 +13,7 @@ module.exports = function(app, route) {
 
     var gandalf = false;
 
-    Resource(app, '', route,  app.models.user).rest({
+    Resource(app, '', route,  app.models.users).rest({
 
         //before posting check that the form gave valid data
         beforePost: function(req, res, next) {
@@ -32,21 +32,20 @@ module.exports = function(app, route) {
             //run, you fools!
             }else {
                 gandalf = true;
-                res.json({success: true, msg: "Successfully created a new user"});
                 next();
             }
 
+        },
+        after:function(req,res,next){
+            if(gandalf){
+                if (res.err) {
+                    return res.json({success: false, msg: res.err});
+                }
+                res.json({success: true, msg: "Successfully created a new user"});
+
+            }
+            next();
         }
-        // after:function(req,res,next){
-        //     if(gandalf){
-        //         if (res.err) {
-        //             return res.json({success: false, msg: res.err});
-        //         }
-        //         res.json({success: true, msg: "Successfully created a new user"});
-        //
-        //     }
-        //     next();
-        // }
     });
 
     // Return middleware.
