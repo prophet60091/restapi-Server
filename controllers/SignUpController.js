@@ -32,7 +32,7 @@ module.exports = function(app, route) {
                 gandalf = true;
                 res.json({success: true, msg: "Successfully created a new user"});
             }
-            //next();
+            next();
         },
         // after:function(req,res,next){
         //     if(gandalf){
