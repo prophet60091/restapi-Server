@@ -31,7 +31,7 @@ module.exports = function(app, route) {
             else {
                 gandalf = true;
             }
-            next();
+            //next();
         },
         after:function(req,res,next){
             if(gandalf){
@@ -41,7 +41,7 @@ module.exports = function(app, route) {
                 res.json({success: true, msg: "Successfully created a new user"});
 
             }
-            next();
+            //next();
         }
     });
 
