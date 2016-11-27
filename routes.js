@@ -4,6 +4,7 @@ module.exports = {
     'location': require('./controllers/LocationController.js'),
     'style': require('./controllers/StyleController.js'),
     'signup': require('./controllers/SignUpController.js'),
+    'authorize' : require ('./controllers/Authenticate.js'),
     'user-beer': require('./controllers/UserBeerController.js'),
     'beer-style': require('./controllers/BeerStyleController.js')
 };
