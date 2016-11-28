@@ -27,6 +27,7 @@
     "newman": "",
     "passport": "^0.3.0",
     "passport-jwt": "^1.2.1",
+    "jwt-simple": "^0.3.1",
     "resourcejs": "^0.1.25",
     "validator": "~6.1.0"
   }

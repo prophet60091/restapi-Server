@@ -28,7 +28,7 @@ module.exports = function(app, route) {
     Resource(app, '', route,  app.models.styles).get().post().patch().put().index()
         .delete({
 
-            after: function(req, res,next){
+            after: function(req, res, next){
                 console.log('-------cleaning up beers------');
                 // get the style id
                 var id = res.resource.item._id;

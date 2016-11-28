@@ -3,13 +3,14 @@
 //reference https://devdactic.com/restful-api-user-authentication-1/
 
 var Resource = require('resourcejs');
+var jwt = require('jwt-simple');
+var config =  require('../config/server');
 
 module.exports = function(app, route) {
-    res.send({success: false, msg: 'Authentication failed. User not found.'});
-    console.log("got this far part 1");
-    app.post(route, function(req, res) {
-        res.send({success: false, msg: 'Authentication failed. User not found.'});
-        console.log("got this far part2");
+
+    app.post("/authorize", function(req, res) {
+
+        var User = app.models.users;
 
         User.findOne({
             name: req.body.name
@@ -18,21 +19,31 @@ module.exports = function(app, route) {
 
             if (!user) {
                 res.send({success: false, msg: 'Authentication failed. User not found.'});
-            } else {
+
+            }else if(!req.body.password){
+                res.send({success: false, msg: 'Password Missing'});
+
+            }else{
                 // check if password matches
                 user.comparePassword(req.body.password, function (err, isMatch) {
                     if (isMatch && !err) {
-                        // if user is found and password is right create a token
+                        //if user is found and password is right create a token
                         var token = jwt.encode(user, config.secret);
-                        // return the information including token as JSON
-                        res.json({success: true, token: 'JWT ' + token});
+
+                        //return the information including token as JSON
+                        res.json({success: true, token: 'JWT ' + token, id: user.id });
+
                     } else {
-                        res.send({success: false, msg: 'Authentication failed. Wrong password.'});
+                        res.send({success: false, msg: 'Authentication failed. Password was incorrect.'});
+
                     }
+
+                //todo update the users lastlogin
                 });
             }
         });
     });
+
 
     // Return middleware.
     return function(req, res, next) {

@@ -5,6 +5,6 @@ module.exports = {
     'style': require('./controllers/StyleController.js'),
     'signup': require('./controllers/SignUpController.js'),
     'authorize' : require ('./controllers/Authenticate.js'),
-    'user-beer': require('./controllers/UserBeerController.js'),
+    'mybeer': require('./controllers/UserBeerController.js'),
     'beer-style': require('./controllers/BeerStyleController.js')
 };
