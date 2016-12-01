@@ -1,6 +1,10 @@
 module.exports = {
     'beer' :require('./controllers/BeerController'),
-    'user' :require('./controllers/UserController'),
-    'location' :require('./controllers/LocationController'),
-    'style' :require('./controllers/StyleController')
+    'user': require('./controllers/UserController.js'),
+    'location': require('./controllers/LocationController.js'),
+    'style': require('./controllers/StyleController.js'),
+    'signup': require('./controllers/SignUpController.js'),
+    'authorize' : require ('./controllers/Authenticate.js'),
+    'mybeer': require('./controllers/UserBeerController.js'),
+    'beer-style': require('./controllers/BeerStyleController.js')
 };
