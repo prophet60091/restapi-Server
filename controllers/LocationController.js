@@ -39,6 +39,7 @@ module.exports = function(app, route) {
     //before: function(req, res, next){} TODO Check if location exists in system first?, then just add to the users stuff
 
     after: function(req, res, next){
+      console.log(res);
       var id = res.resource.item._id;
       //console.log("idtopush", id);
       //console.log("userId to add it to", userId);
