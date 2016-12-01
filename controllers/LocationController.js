@@ -24,6 +24,7 @@ module.exports = function(app, route) {
             return res.status(403).send({success: false, msg: 'Authentication failed. User not found.'});
           } else {
             //set the user Id of the requestor
+            console.log("setting user Id to ",user._id)
             userId = user._id;
             next();
           }
@@ -34,7 +35,7 @@ module.exports = function(app, route) {
       }
     }*/
 
-  }).post({
+  }).post(/*{
     //add this post's id to the user's beer collection
     //before: function(req, res, next){} TODO Check if location exists in system first?, then just add to the users stuff
 
@@ -60,7 +61,7 @@ module.exports = function(app, route) {
 
       next();
     }
-  }).delete({
+  }*/).delete({
 
     after: function(req, res, next){
       console.log('-------cleaning up locations in users------');

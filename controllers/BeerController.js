@@ -1,5 +1,3 @@
-
-
 var Resource = require('resourcejs');
 var passport = require('passport');
 var config = require('../config/server');
