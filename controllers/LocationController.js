@@ -6,8 +6,8 @@ module.exports = function(app, route) {
 
   // Setup the controller for REST;
   Resource(app, '', route,  app.models.locations).rest({
-    userId: '580bf1cedcba0f490c72e272'
-    /*//Check for credentials
+    userId: null,
+    //Check for credentials
     before: function(req, res, next) {
       //var result = passport.authorize('jwt', {session: false});
       //console.log(result);
@@ -24,7 +24,6 @@ module.exports = function(app, route) {
             return res.status(403).send({success: false, msg: 'Authentication failed. User not found.'});
           } else {
             //set the user Id of the requestor
-            console.log("setting user Id to ",user._id)
             userId = user._id;
             next();
           }
@@ -33,17 +32,17 @@ module.exports = function(app, route) {
         return res.status(403).send({success: false, msg: 'No token provided.'});
 
       }
-    }*/
+    }
 
-  }).post(/*{
+  }).post({
     //add this post's id to the user's beer collection
     //before: function(req, res, next){} TODO Check if location exists in system first?, then just add to the users stuff
 
     after: function(req, res, next){
       //console.log("response",res.resource);
       var id = res.resource.item._id;
-      //console.log("idtopush", id);
-      //console.log("userId to add it to", userId);
+      console.log("LOCATION: idtopush", id);
+      console.log("LOCATION: userId to add it to", userId);
 
       // /set parameters for the add
       var condition = {"_id": userId}
@@ -61,7 +60,7 @@ module.exports = function(app, route) {
 
       next();
     }
-  }*/).delete({
+  }).delete({
 
     after: function(req, res, next){
       console.log('-------cleaning up locations in users------');
