@@ -12,38 +12,7 @@ var LocationSchema = new mongoose.Schema({
     maxlength: 60,
     required: true
   },
-  address: [{
-    number: {
-      type: String,
-      required: true,
-      maxlength: 60
-    },
-    street: {
-      type: String,
-      required: true,
-      maxlength: 60
-    },
-    unit:{
-      type: String,
-      required: false,
-      maxlength: 60
-    },
-    city:{
-      type: String,
-      required: false,
-      maxlength: 60
-    },
-    state:{
-      type: String,
-      required: false,
-      maxlength: 60
-    },
-    zip:{
-      type: String,
-      required: false,
-      maxlength: 10
-    }
-  }],
+  address: [AddressSchema],
   beer_in_stock: [{
     beer:{
       type: mongoose.Schema.Types.ObjectId,
@@ -78,6 +47,44 @@ var LocationSchema = new mongoose.Schema({
   }
 });
 
+var AddressSchema = new mongoose.Schema({
+  address: [{
+    number: {
+      type: String,
+      required: true,
+      maxlength: 60
+    },
+    street: {
+      type: String,
+      required: true,
+      maxlength: 60
+    },
+    unit:{
+      type: String,
+      required: false,
+      maxlength: 60
+    },
+    city:{
+      type: String,
+      required: false,
+      maxlength: 60
+    },
+    state:{
+      type: String,
+      required: false,
+      maxlength: 60
+    },
+    zip:{
+      type: String,
+      required: false,
+      maxlength: 10
+    }
+  }]
+
+});
+
+
 // Export the model.
 //module.exports = BeerSchema;
 module.exports = mongoose.model('locations', LocationSchema);
+module.exports = mongoose.model('addresses', AddressSchema);
