@@ -31,7 +31,7 @@ module.exports = function(app, route) {
                         userId = user._id;
 
                         //return only those belonging to
-                        app.models.beers.find({'_id': {
+                        app.models.locations.find({'_id': {
                                 $in: _.map(user.ulocations, 'locations')} },
                             function(err, docs){
                               return  res.status(200).send(docs);
