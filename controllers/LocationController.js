@@ -46,10 +46,10 @@ module.exports = function(app, route) {
 
       // /set parameters for the add
       var condition = {"_id": userId}
-          , update = {$addToSet:{"ulocations":{"locations":id, "loved": req.body.loved}}}    // set it to null
+          , update = {$addToSet:{"ulocations":{"location":id, "loved": req.body.loved}}}    // set it to null
           , options = { }; // check all beer documents
 
-      var user = app.models.locations.model('locations');
+      var user = app.models.users.model('users');
 
       //add it
       user.update(condition, update, options, cb);

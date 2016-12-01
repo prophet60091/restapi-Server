@@ -29,7 +29,7 @@ var UserSchema = new mongoose.Schema({
       required: false
     }}],
   ulocations: [{
-    locations:{
+    location:{
       type: mongoose.Schema.Types.ObjectId,
       ref: 'locations',
       required: false
@@ -37,7 +37,8 @@ var UserSchema = new mongoose.Schema({
     loved: {
       type:Boolean,
       required: false
-    }}],
+    }
+    }],
   date: {
     type: Date,
     required: false
