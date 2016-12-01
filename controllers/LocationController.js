@@ -6,8 +6,8 @@ module.exports = function(app, route) {
 
   // Setup the controller for REST;
   Resource(app, '', route,  app.models.locations).rest({
-    userId: null,
-    //Check for credentials
+    userId: '580bf1cedcba0f490c72e272'
+    /*//Check for credentials
     before: function(req, res, next) {
       //var result = passport.authorize('jwt', {session: false});
       //console.log(result);
@@ -32,7 +32,7 @@ module.exports = function(app, route) {
         return res.status(403).send({success: false, msg: 'No token provided.'});
 
       }
-    }
+    }*/
 
   }).post({
     //add this post's id to the user's beer collection
@@ -40,7 +40,7 @@ module.exports = function(app, route) {
 
     after: function(req, res, next){
       //console.log("response",res.resource);
-      var id = res.resource.item.id;
+      var id = res.resource.item._id;
       //console.log("idtopush", id);
       //console.log("userId to add it to", userId);
 
