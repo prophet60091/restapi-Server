@@ -1,37 +1,6 @@
 var mongoose = require('mongoose');
 var AddressSchema = new mongoose.Schema({
-  address: [{
-    number: {
-      type: String,
-      required: true,
-      maxlength: 60
-    },
-    street: {
-      type: String,
-      required: true,
-      maxlength: 60
-    },
-    unit:{
-      type: String,
-      required: false,
-      maxlength: 60
-    },
-    city:{
-      type: String,
-      required: false,
-      maxlength: 60
-    },
-    state:{
-      type: String,
-      required: false,
-      maxlength: 60
-    },
-    zip:{
-      type: String,
-      required: false,
-      maxlength: 10
-    }
-  }]
+
 
 });
 // Create the Schema.
@@ -41,12 +10,43 @@ var LocationSchema = new mongoose.Schema({
     maxlength: 60,
     required: true
   },
-  type: {
+  locationtype: {
     type: String,
     maxlength: 60,
     required: true
   },
-  address: [AddressSchema],
+  address: [{
+  number: {
+    type: String,
+    required: true,
+    maxlength: 60
+  },
+  street: {
+    type: String,
+    required: true,
+    maxlength: 60
+  },
+  unit:{
+    type: String,
+    required: false,
+    maxlength: 60
+  },
+  city:{
+    type: String,
+    required: false,
+    maxlength: 60
+  },
+  state:{
+    type: String,
+    required: false,
+    maxlength: 60
+  },
+  zip:{
+    type: String,
+    required: false,
+    maxlength: 10
+  }
+}],
   beer_in_stock: [{
     beer:{
       type: mongoose.Schema.Types.ObjectId,
