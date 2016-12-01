@@ -1,8 +1,8 @@
 var mongoose = require('mongoose');
-var AddressSchema = new mongoose.Schema({
-
-
-});
+// var AddressSchema = new mongoose.Schema({
+//
+//
+// });
 // Create the Schema.
 var LocationSchema = new mongoose.Schema({
   name: {
@@ -87,4 +87,3 @@ var LocationSchema = new mongoose.Schema({
 // Export the model.
 //module.exports = BeerSchema;
 module.exports = mongoose.model('locations', LocationSchema);
-module.exports = mongoose.model('addresses', AddressSchema);
