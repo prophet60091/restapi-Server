@@ -32,7 +32,7 @@ module.exports = function(app, route) {
 
                         //return only those belonging to
                         app.models.locations.find({'_id': {
-                                $in: _.map(user.ulocations, 'locations')} },
+                                $in: _.map(user.ulocations, 'location')} },
                             function(err, docs){
                               return  res.status(200).send(docs);
                         });
