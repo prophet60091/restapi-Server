@@ -18,7 +18,7 @@ var UserSchema = new mongoose.Schema({
     required: true,
     bcrypt: true
   },
-  ubeer: [{
+  ubeers: [{
     beer:{
       type: mongoose.Schema.Types.ObjectId,
       ref: 'beers',
