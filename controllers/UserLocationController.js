@@ -50,6 +50,7 @@ module.exports = function(app, route) {
     .delete({
        //remove a beer from the users collection
 
+
     });
 
 
