@@ -39,9 +39,10 @@ module.exports = function(app, route) {
   }).post({
     //add this post's id to the user's beer collection
     //before: function(req, res, next){} TODO Check if location exists in system first?, then just add to the users stuff
+    userId: null,
     before: function(req, res, next){
-      //var result = passport.authorize('jwt', {session: false});
-      //console.log(result);
+      //Check for credentials
+
       var token = getToken(req.headers);
       if (token) {
         console.log("gottoken");
@@ -90,9 +91,9 @@ module.exports = function(app, route) {
     DELETE
      */
   }).delete({
+    userId: null,
     before:function(req, res, next){
-      //var result = passport.authorize('jwt', {session: false});
-      //console.log(result);
+
       var token = getToken(req.headers);
       if (token) {
         console.log("gottoken");
@@ -143,6 +144,7 @@ module.exports = function(app, route) {
     PUT
      */
   }).put({
+    userId: null,
     before:function(req, res, next){
       //var result = passport.authorize('jwt', {session: false});
       //console.log(result);
