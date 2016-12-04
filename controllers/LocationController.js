@@ -3,10 +3,10 @@ var passport = require('passport');
 var config = require('../config/server');
 var jwt = require('jwt-simple');
 module.exports = function(app, route) {
-
+var userID = null;
   // Setup the controller for REST;
   Resource(app, '', route,  app.models.locations).get({
-    userId: null,
+
     //Check for credentials
     before: function(req, res, next) {
       //var result = passport.authorize('jwt', {session: false});
@@ -30,13 +30,14 @@ module.exports = function(app, route) {
         });
       } else {
         return res.status(403).send({success: false, msg: 'No token provided.'});
-
       }
+
     }
+  })
   /*
-  POST
+   POST
    */
-  }).post({
+    .post({
     //add this post's id to the user's beer collection
     //before: function(req, res, next){} TODO Check if location exists in system first?, then just add to the users stuff
     userId: null,
@@ -90,7 +91,11 @@ module.exports = function(app, route) {
     /*
     DELETE
      */
-  }).delete({
+  })
+  /*
+   DELETE
+   */
+    .delete({
     userId: null,
     before:function(req, res, next){
 
@@ -170,7 +175,7 @@ module.exports = function(app, route) {
 
       }
     }
-  });
+  }).index();
   getToken = function (headers) {
     if (headers && headers.authorization) {
       var parted = headers.authorization.split(' ');
