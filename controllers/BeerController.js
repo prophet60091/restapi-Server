@@ -194,12 +194,10 @@ module.exports = function(app, route) {
 
                      console.log("idtopush", beerId);
                      console.log("userId to add it to", userId);
-                     if (beerId.match(/^[0-9a-fA-F]{24}$/)) {
-                         console.log("gtg");
-                     }
+
                      // /set parameters for the add
                      var condition = {"_id": userId}
-                         , update = {$addToSet:{ubeers:{beer: beerId, loved: req.body.loved}}}    // set it to null
+                         , update = {$addToSet:{"ubeers":{"beer": beerId, "loved": req.body.loved}}}    // set it to null
                          , options = { }; // check all beer documents
 
                      var user = app.models.users.model('users');
