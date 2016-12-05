@@ -171,6 +171,7 @@ module.exports = function(app, route) {
          }
      }
  }).put({
+     userIf: null,
      beerId: null,
      before: function (req, res, next) {
          console.log(req.params);
