@@ -147,7 +147,7 @@ module.exports = function(app, route) {
         .put({
         before: function (req, res, next) {
             console.log(req.params);
-            var beerid = req.params.mybeersId;
+            var beerId = req.params.mybeersId;
             var token = getToken(req.headers);
             if (token) {
                 console.log("gottoken");
@@ -174,7 +174,7 @@ module.exports = function(app, route) {
         },
             //NOW ADD the beer to the users stash
         after: function(req, res, next){
-            var id = res.resource.item._id;
+            var id = beerId;
             //console.log("idtopush", id);
             //console.log("userId to add it to", userId);
 
