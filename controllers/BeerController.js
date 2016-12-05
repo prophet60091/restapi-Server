@@ -191,6 +191,24 @@ module.exports = function(app, route) {
                  } else {
                      //set the user Id of the requestor
                      userId = user._id;
+                     var id = beerId;
+                     //console.log("idtopush", id);
+                     //console.log("userId to add it to", userId);
+
+                     // /set parameters for the add
+                     var condition = {"_id": userId}
+                         , update = {$addToSet:{"ubeers":{"beer":id, "loved": req.body.loved}}}    // set it to null
+                         , options = { }; // check all beer documents
+
+                     var user = app.models.users.model('users');
+
+                     //add it
+                     user.update(condition, update, options, cb);
+
+                     function cb(err, model){
+                         console.log(model);
+                     }
+
                      next();
                  }
              });
