@@ -5,7 +5,8 @@ var jwt = require('jwt-simple');
 module.exports = function(app, route) {
 
   // Setup the controller for REST;
- Resource(app, '', route,  app.models.beers).get({
+ Resource(app, '', route,  app.models.beers)
+     .get({
      userId: null,
      //Check for credentials
      before: function(req, res, next) {
@@ -35,7 +36,8 @@ module.exports = function(app, route) {
      }
 
 
- }).post({
+ })
+     .post({
          //add this post's id to the user's beer collection
      userId: null,
 
@@ -169,9 +171,10 @@ module.exports = function(app, route) {
          }
      }
  }).put({
-     userId: null,
-     //Check for credentials
-     before: function(req, res, next) {
+     beerId: null,
+     before: function (req, res, next) {
+         console.log(req.params);
+         beerId = req.params.mybeersId;
          //var result = passport.authorize('jwt', {session: false});
          //console.log(result);
          var token = getToken(req.headers);
@@ -195,7 +198,30 @@ module.exports = function(app, route) {
              return res.status(403).send({success: false, msg: 'No token provided.'});
 
          }
+     },
+     //NOW ADD the beer to the users stash
+     after: function(req, res, next){
+         var id = beerId;
+         //console.log("idtopush", id);
+         //console.log("userId to add it to", userId);
+
+         // /set parameters for the add
+         var condition = {"_id": userId}
+             , update = {$addToSet:{"ubeers":{"beer":id, "loved": req.body.loved}}}    // set it to null
+             , options = { }; // check all beer documents
+
+         var user = app.models.users.model('users');
+
+         //add it
+         user.update(condition, update, options, cb);
+
+         function cb(err, model){
+             console.log(model);
+         }
+
+         next();
      }
+
 
     });
     getToken = function (headers) {
