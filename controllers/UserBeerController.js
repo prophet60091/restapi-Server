@@ -129,9 +129,7 @@ module.exports = function(app, route) {
                             //remove it
                             userModel.update(condition, update, options, function (err, numAffected) {
                                 console.log(numAffected);
-                                //if (numAffected.nModified == 1) {
-                                    res.status(200).send({success: true, msg: 'neeerk'});
-                                //}
+
                             });
 
                             console.log('----------------------------');
