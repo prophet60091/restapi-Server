@@ -31,14 +31,14 @@ module.exports = function(app, route) {
                         //set the user Id of the requestor
                         userId = user._id;
                         //console.log(_.map(user.ubeer, 'beer'));
-
-                        //return only those belonging to
-                        app.models.beers.find({'_id': {
-                                $in: _.map(user.ubeers, 'beer')} },
-                            function(err, docs){
-                                console.log(err);
-                                return  res.status(200).send(docs);
-                            });
+                        //
+                        // //return only those belonging to
+                        // app.models.beers.find({'_id': {
+                        //         $in: _.map(user.ubeers, 'beer')} },
+                        //     function(err, docs){
+                        //         console.log(err);
+                        //         return  res.status(200).send(docs);
+                        //     });
                     }
                 });
             } else {
