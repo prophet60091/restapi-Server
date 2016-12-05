@@ -67,7 +67,7 @@ module.exports = function(app, route) {
 
      after: function(req, res, next){
          var id = res.resource.item._id;
-
+         console.log("req", req);
          console.log("idtopush", res.resource);
          //console.log("userId to add it to", userId);
 

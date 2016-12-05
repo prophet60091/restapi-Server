@@ -14,6 +14,7 @@ module.exports = function(app, route) {
 
         //Check for credentials
         before: function(req, res, next) {
+
             //var result = passport.authorize('jwt', {session: false});
             //console.log(result);
             var token = getToken(req.headers);
@@ -92,7 +93,7 @@ module.exports = function(app, route) {
 
     })
         .delete({
-
+            userId: null,
         before: function(req, res, next) {
             var beerid = req.params.mybeersId;
             req.skipResource = true;
@@ -145,9 +146,11 @@ module.exports = function(app, route) {
         }
     })
         .put({
+            userId: null,
+            beerId: null,
         before: function (req, res, next) {
             console.log(req.params);
-            var beerId = req.params.mybeersId;
+            beerId = req.params.mybeersId;
             var token = getToken(req.headers);
             if (token) {
                 console.log("gottoken");
