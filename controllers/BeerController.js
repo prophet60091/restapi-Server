@@ -174,7 +174,7 @@ module.exports = function(app, route) {
      userId: null,
      beerId: null,
      before: function (req, res, next) {
-         console.log(req.params);
+         console.log("params:", req.params);
          beerId = req.params.mybeersId;
          //var result = passport.authorize('jwt', {session: false});
          //console.log(result);
@@ -192,13 +192,13 @@ module.exports = function(app, route) {
                  } else {
                      //set the user Id of the requestor
                      userId = user._id;
-                     var id = beerId;
+
                      //console.log("idtopush", id);
                      //console.log("userId to add it to", userId);
 
                      // /set parameters for the add
                      var condition = {"_id": userId}
-                         , update = {$addToSet:{"ubeers":{"beer":id, "loved": req.body.loved}}}    // set it to null
+                         , update = {$addToSet:{"ubeers":{"beer":beerId, "loved": req.body.loved}}}    // set it to null
                          , options = { }; // check all beer documents
 
                      var user = app.models.users.model('users');
@@ -217,9 +217,9 @@ module.exports = function(app, route) {
              return res.status(403).send({success: false, msg: 'No token provided.'});
 
          }
-     },
+     }
      //NOW ADD the beer to the users stash
-     after: function(req, res, next){
+     /*after: function(req, res, next){
          var id = beerId;
          //console.log("idtopush", id);
          //console.log("userId to add it to", userId);
@@ -239,7 +239,7 @@ module.exports = function(app, route) {
          }
 
          next();
-     }
+     }*/
 
 
     });
