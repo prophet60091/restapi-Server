@@ -41,8 +41,7 @@ module.exports = function(app, route) {
 
      //Check for credentials
      before: function(req, res, next) {
-         //var result = passport.authorize('jwt', {session: false});
-         //console.log(result);
+
          var token = getToken(req.headers);
          if (token) {
              console.log("gottoken");
@@ -68,7 +67,8 @@ module.exports = function(app, route) {
 
      after: function(req, res, next){
          var id = res.resource.item._id;
-         //console.log("idtopush", id);
+
+         console.log("idtopush", res.resource);
          //console.log("userId to add it to", userId);
 
          // /set parameters for the add
