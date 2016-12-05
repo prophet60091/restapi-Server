@@ -39,6 +39,7 @@ module.exports = function(app, route) {
                         //         console.log(err);
                         //         return  res.status(200).send(docs);
                         //     });
+                        next();
                     }
                 });
             } else {
