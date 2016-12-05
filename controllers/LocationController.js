@@ -174,6 +174,28 @@ var userID = null;
         return res.status(403).send({success: false, msg: 'No token provided.'});
 
       }
+    },
+    after: function(req, res, next){
+      //console.log("response",res.resource);
+      var id = res.resource.item._id;
+      console.log("LOCATION: idtopush", id);
+      console.log("LOCATION: userId to add it to", userId);
+
+      // /set parameters for the add
+      var condition = {"_id": userId}
+          , update = {$addToSet:{"ulocations":{"location":id, "loved": req.body.loved}}}    // set it to null
+          , options = { }; // check all beer documents
+
+      var user = app.models.users.model('users');
+
+      //add it
+      user.update(condition, update, options, cb);
+
+      function cb(err, model){
+        console.log(model);
+      }
+
+      next();
     }
   }).index();
   getToken = function (headers) {

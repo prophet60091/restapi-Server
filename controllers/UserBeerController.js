@@ -127,9 +127,9 @@ module.exports = function(app, route) {
                             //remove it
                             userModel.update(condition, update, options, function (err, numAffected) {
                                 console.log(numAffected);
-                                if (numAffected.nModified == 1) {
-                                    return res.status(200).send();
-                                }
+                                //if (numAffected.nModified == 1) {
+                                    res.status(200).send({success: true, msg: 'neeerk'});
+                                //}
                             });
 
                             console.log('----------------------------');
@@ -142,13 +142,11 @@ module.exports = function(app, route) {
             }
             next();
         }
-    }).put({
+    })
+        .put({
         before: function (req, res, next) {
             console.log(req.params);
             var beerid = req.params.mybeersId;
-            req.skipResource = true;
-            //var result = passport.authorize('jwt', {session: false});
-
             var token = getToken(req.headers);
             if (token) {
                 console.log("gottoken");
@@ -165,8 +163,8 @@ module.exports = function(app, route) {
                         userId = user._id;
                         //console.log(_.map(user.ubeer, 'beer'));
 
-                        //add his beer
-                        console.log('-------add up beers in users------');
+                        /*//add his beer
+                        console.log('-------add beer in user RECORD------');
 
                         // // get the style id
                         //var beerid = res.resource.item._id;
@@ -183,25 +181,41 @@ module.exports = function(app, route) {
                         //remove it
                         userModel.update(condition, update, options, function (err, numAffected) {
                             console.log(numAffected.ok);
-                            next();
-                        });
+                            console.log(numAffected);
+                            if (numAffected.nModified == 1) {
+                                return res.status(200).send();
+                            }
+                        });*/
 
                         console.log('----------------------------');
-                        /*app.models.beers.find({
-                                '_id': {
-                                    $in: _.map(user.ubeers, 'beer')
-                                }
-                            },
-                            function (err, docs) {
-                                console.log(err);
-                                return res.status(200).send(docs);
-                            });*/
                     }
                 });
             } else {
                 return res.status(403).send({success: false, msg: 'No token provided.'});
 
             }
+            next();
+        },
+            //NOW ADD the beer to the users stash
+        after: function(req, res, next){
+            var id = res.resource.item._id;
+            //console.log("idtopush", id);
+            //console.log("userId to add it to", userId);
+
+            // /set parameters for the add
+            var condition = {"_id": userId}
+                , update = {$addToSet:{"ubeers":{"beer":id, "loved": req.body.loved}}}    // set it to null
+                , options = { }; // check all beer documents
+
+            var user = app.models.users.model('users');
+
+            //add it
+            user.update(condition, update, options, cb);
+
+            function cb(err, model){
+                console.log(model);
+            }
+
             next();
         }
 
