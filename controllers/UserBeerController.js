@@ -171,7 +171,6 @@ module.exports = function(app, route) {
                 return res.status(403).send({success: false, msg: 'No token provided.'});
 
             }
-            next();
         },
             //NOW ADD the beer to the users stash
         after: function(req, res, next){
