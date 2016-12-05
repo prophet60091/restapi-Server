@@ -175,9 +175,8 @@ module.exports = function(app, route) {
      beerId: null,
      before: function (req, res, next) {
          console.log("params:", req.params);
-         beerId = req.params.mybeersId;
-         //var result = passport.authorize('jwt', {session: false});
-         //console.log(result);
+         beerId = req.params.beerId;
+
          var token = getToken(req.headers);
          if (token) {
              console.log("gottoken");
@@ -193,12 +192,14 @@ module.exports = function(app, route) {
                      //set the user Id of the requestor
                      userId = user._id;
 
-                     //console.log("idtopush", id);
-                     //console.log("userId to add it to", userId);
-
+                     console.log("idtopush", beerId);
+                     console.log("userId to add it to", userId);
+                     if (beerId.match(/^[0-9a-fA-F]{24}$/)) {
+                         console.log("gtg");
+                     }
                      // /set parameters for the add
                      var condition = {"_id": userId}
-                         , update = {$addToSet:{"ubeers":{"beer":beerId, "loved": req.body.loved}}}    // set it to null
+                         , update = {$addToSet:{ubeers:{beer: beerId, loved: req.body.loved}}}    // set it to null
                          , options = { }; // check all beer documents
 
                      var user = app.models.users.model('users');
