@@ -29,7 +29,7 @@ app.use(function(req, res, next) {
     res.header('Access-Control-Allow-Methods', 'GET,HEAD,PUT,PATCH,POST,DELETE');
     res.header('Access-Control-Expose-Headers', 'Content-Length');
     res.header('Access-Control-Allow-Headers', 'Accept, Authorization, Content-Type, X-Requested-With, Range');
-    res.header ('Cache-control', 'public, max-age=0');
+    res.header ('Cache-Control', 'public, max-age=0');
     if (req.method === 'OPTIONS') {
         return res.send(200);
     } else {
@@ -39,7 +39,7 @@ app.use(function(req, res, next) {
 
 // log to console
 app.use(morgan('dev'));
-
+app.disable('etag');
 // Connect to MongoDB
 var options = { server: { socketOptions: { keepAlive: 300000, connectTimeoutMS: 30000 } },
     replset: { socketOptions: { keepAlive: 300000, connectTimeoutMS : 30000 } } };
