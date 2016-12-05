@@ -88,9 +88,6 @@ var userID = null;
 
       next();
     }
-    /*
-    DELETE
-     */
   })
   /*
    DELETE
